@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
 # Run all install config scripts
-sh config/alacritty/install.sh
-sh config/nvim/install.sh
-sh config/tmux/install.sh
+bash config/alacritty/install.sh
+bash config/nvim/install.sh
+bash config/tmux/install.sh

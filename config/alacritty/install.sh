@@ -1,8 +1,7 @@
-#!/bin/sh
+#!/bin/bash
 
 echo "### Alacritty ###"
 
-# shellcheck disable=SC3046-SC3052
 source "scripts/util.sh"
 
 curr_dir=$(pwd)
