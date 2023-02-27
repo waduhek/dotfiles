@@ -39,7 +39,7 @@ else
 fi
 
 echo ">>> Copying init.lua"
-cp -v "$(construct_path "$curr_dir" $app_dir "init.lua")" "$(construct_pat "$app_config_dest" "init.lua")"
+cp -v "$(construct_path "$curr_dir" $app_dir "init.lua")" "$(construct_path "$app_config_dest" "init.lua")"
 
 echo ">>> Copying plugins.lua"
 cp -v "$(construct_path "$curr_dir" $app_dir "lua" "plugins.lua")" "$(construct_path "$dest_lua_dir" "plugins.lua")"
