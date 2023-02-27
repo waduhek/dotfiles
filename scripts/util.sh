@@ -12,5 +12,5 @@ function construct_path () {
         fi
     done
 
-    echo $full_path
+    echo "$full_path"
 }
