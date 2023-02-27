@@ -8,18 +8,26 @@ app_dir="config/nvim"
 app_config_dest=$(construct_path $HOME ".config/nvim")
 
 echo ">>> Checking if Packer.nvim is installed"
-nvim_pack_dir=$(construct_path $HOME ".local/share/nvim/site/pack")
+nvim_pack_dir=$(construct_path $HOME ".local/share/nvim/site/pack/packer")
 
 if [ ! -d "$nvim_pack_dir" ]
 then
     echo ">>> Packer.nvim was not found. Installing..."
-    git clone --depth 1 https://github.com/wbthomason/packer.nvim $(construct_path $nvim_pack_dir "packer" "start" "packer.nvim")
+    git clone --depth 1 https://github.com/wbthomason/packer.nvim $(construct_path $nvim_pack_dir "start" "packer.nvim")
 else
     echo ">>> Packer.nvim was found"
 fi
 
-echo ">>> Checking if constants folder exists"
+echo ">>> Checking if lua directory exists"
 dest_lua_dir=$(construct_path $app_config_dest "lua")
+
+if [ ! -d "$dest_lua_dir" ]
+then
+    echo ">>> Lua directory does not exist. Creating..."
+    mkdir $dest_lua_dir
+fi
+
+echo ">>> Checking if constants folder exists"
 dest_constants_dir=$(construct_path $dest_lua_dir "constants")
 
 if [ ! -d "$dest_constants_dir" ]
