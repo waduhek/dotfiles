@@ -86,4 +86,6 @@ return require("packer").startup(function(use)
     }
 
     use "editorconfig/editorconfig-vim"
+
+    use "tpope/vim-surround"
 end)
