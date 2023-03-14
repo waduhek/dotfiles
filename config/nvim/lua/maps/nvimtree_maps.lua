@@ -1,3 +1,12 @@
--- Toggle NERDTree
-vim.keymap.set("n", "<C-t>", "<Cmd>NvimTreeToggle<CR>")
-vim.keymap.set("n", ",t", "<Cmd>NvimTreeFindFile<CR>")
+local nvim_tree = require("nvim-tree.api")
+
+vim.keymap.set("n", "<C-t>", nvim_tree.tree.toggle)
+vim.keymap.set(
+    "n",
+    ",t",
+    function() 
+        nvim_tree.tree.find_file({
+            focus = true
+        })
+    end
+)
