@@ -6,7 +6,8 @@ vim.keymap.set(
     ",t",
     function() 
         nvim_tree.tree.find_file({
-            focus = true
+            open = true,
+            focus = true,
         })
     end
 )
