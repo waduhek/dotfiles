@@ -1,20 +1,35 @@
 local nvim_tree = require("nvim-tree")
+local nvim_tree_api = require("nvim-tree.api")
 
 -- Disable netrw
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+---`NvimTree` on attach function. Sets up any keymaps when `nvim-tree` is
+---attached to the current buffer.
+local function nvim_tree_on_attach(buffnr)
+    local function opts(desc)
+        return {
+            desc = "nvim-tree: " .. desc,
+            buffer = buffnr,
+            noremap = true,
+            silent = true,
+            nowait = true,
+        }
+    end
+
+    -- Set default mappings
+    nvim_tree_api.config.mappings.default_on_attach(buffnr)
+
+    -- Remove the <C-e> keymap as it prevents scrolling in the view.
+    vim.keymap.del("n", "<C-e>", { buffer = buffnr })
+end
+
 nvim_tree.setup({
     git = {
         ignore = false,
     },
-    view = {
-        mappings = {
-            list = {
-                { key = "<C-e>", action = "" },
-            },
-        },
-    },
+    on_attach = nvim_tree_on_attach,
 })
 
 ---Opens `NvimTree` if the `nvim` is opened from a directory.
