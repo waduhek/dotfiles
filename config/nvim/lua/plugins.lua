@@ -13,9 +13,6 @@ return require("packer").startup(function(use)
     -- Dev icons
     use "nvim-tree/nvim-web-devicons"
 
-    -- Bracket completion
-    use "Raimondi/delimitMate"
-
     -- NvimTree file explorer
     use "nvim-tree/nvim-tree.lua"
 
