@@ -65,3 +65,6 @@ for config_file in $(construct_path "$curr_dir" $app_dir "lua" "maps" "*.lua")
 do
     cp -v "$config_file" "$(construct_path "$dest_lua_dir" "maps")"
 done
+
+echo ">>> Copying after directory"
+cp -rv "$(construct_path "$curr_dir" "$app_dir" "after")" "$(construct_path "$app_config_dest")"
