@@ -11,3 +11,9 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 -- Remap the next pattern bind
 vim.keymap.set("n", "n", "nzz")
 vim.keymap.set("n", "N", "Nzz")
+
+vim.keymap.set("x", "<leader>p", [["_dP]])
+
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
