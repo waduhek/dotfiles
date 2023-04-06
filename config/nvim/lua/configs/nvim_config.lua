@@ -1,6 +1,9 @@
 -- Completion config.
 vim.o.completeopt = "menu,menuone,noselect"
 
+-- Use spaces for indentation
+vim.opt.expandtab = true
+
 -- Enable ftplugin
 vim.api.nvim_command("filetype plugin indent on")
 
