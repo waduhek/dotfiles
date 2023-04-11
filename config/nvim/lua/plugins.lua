@@ -24,6 +24,8 @@ return require("packer").startup(function(use)
         end
     }
 
+    use "nvim-treesitter/nvim-treesitter-context"
+
     -- LSP configuration
     use "neovim/nvim-lspconfig"
 
