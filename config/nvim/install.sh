@@ -28,12 +28,10 @@ then
 fi
 
 echo ">>> Checking if constants folder exists"
-dest_constants_dir=$(construct_path "$dest_lua_dir" "constants")
-
-if [ ! -d "$dest_constants_dir" ]
+if [ ! -d "$(construct_path "$dest_lua_dir" "constants")" ]
 then
     echo ">>> constants are not present. Copying constants..."
-    cp -rv "$(construct_path "$curr_dir" $app_dir "lua" "constants")" "$dest_constants_dir"
+    cp -rv "$(construct_path "$curr_dir" $app_dir "lua" "constants")" "$(construct_path "$dest_lua_dir")"
 else
     echo ">>> constants are present. Skipping overwrite"
 fi
@@ -45,26 +43,25 @@ echo ">>> Copying plugins.lua"
 cp -v "$(construct_path "$curr_dir" $app_dir "lua" "plugins.lua")" "$(construct_path "$dest_lua_dir" "plugins.lua")"
 
 echo ">>> Copying configs"
-if [ ! -d  "$(construct_path "$dest_lua_dir" "configs")" ]
+if [ -d "$(construct_path "$dest_lua_dir" "configs")" ]
 then
-    mkdir "$(construct_path "$dest_lua_dir" "configs")"
+    rm -r "$(construct_path "$dest_lua_dir" "configs")"
 fi
 
-for config_file in $(construct_path "$curr_dir" $app_dir "lua" "configs" "*.lua")
-do
-    cp -v "$config_file" "$(construct_path "$dest_lua_dir" "configs")"
-done
+cp -rv "$(construct_path "$curr_dir" "$app_dir" "lua" "configs")" "$(construct_path "$dest_lua_dir")"
 
 echo ">>> Copying maps"
-if [ ! -d "$(construct_path "$dest_lua_dir" "maps")" ]
+if [ -d "$(construct_path "$dest_lua_dir" "maps")" ]
 then
-    mkdir "$(construct_path "$dest_lua_dir" "maps")"
+    rm -r "$(construct_path "$dest_lua_dir" "maps")"
 fi
 
-for config_file in $(construct_path "$curr_dir" $app_dir "lua" "maps" "*.lua")
-do
-    cp -v "$config_file" "$(construct_path "$dest_lua_dir" "maps")"
-done
+cp -rv "$(construct_path "$curr_dir" "$app_dir" "lua" "maps")" "$(construct_path "$dest_lua_dir")"
 
 echo ">>> Copying after directory"
+if [ -d "$(construct_path "$app_config_dest" "after")" ]
+then
+    rm -r "$(construct_path "$app_config_dest" "after")"
+fi
+
 cp -rv "$(construct_path "$curr_dir" "$app_dir" "after")" "$(construct_path "$app_config_dest")"
