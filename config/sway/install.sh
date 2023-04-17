@@ -13,4 +13,4 @@ if [ ! -d "$(construct_path "$HOME" "$app_config_dest")" ];
 then
     mkdir "$(construct_path "$HOME" "$app_config_dest")"
 fi
-cp -rv "$(construct_path "$curr_dir" "$app_dir" "config")" "$(construct_path "$HOME" "$app_config_dest")"
+cp -v "$(construct_path "$curr_dir" "$app_dir" "config")" "$(construct_path "$HOME" "$app_config_dest")"
