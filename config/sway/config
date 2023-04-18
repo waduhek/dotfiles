@@ -40,9 +40,10 @@ output 'BNQ BenQ EX2510 5CL01826019' mode 1920x1080@143.981Hz
 # the displays after another 300 seconds, and turn the screens back on when
 # resumed. It will also lock the screen before the computer goes to sleep.
 exec swayidle -w \
-         timeout 300 'swaylock -f -c 000000' \
-         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-         before-sleep 'swaylock -f -c 000000'
+    timeout 300 'swaylock --daemonize' \
+    timeout 600 'swaymsg "output * power off"' \
+    resume 'swaymsg "output * power on"' \
+    before-sleep 'swaylock --daemonize'
 
 ### Input configuration
 #
@@ -89,7 +90,7 @@ exec swayidle -w \
     # Suspend Sway
     #
     # Locks the screen then suspends the session
-    bindsym $mod+Shift+s exec swayidle -w timeout 1 'systemctl suspend' resume 'killall -9 swayidle' before-sleep 'swaylock --daemonize'
+    bindsym $mod+Shift+s exec ~/.config/sway/scripts/suspend_locker.sh
     # Restart the system
     bindsym $mod+Shift+r exec swaynag -t warning -m 'You pressed the restart shortcut. Do you really want to restart?' -B 'Yes, restart' 'reboot'
     # Shutdown the system
