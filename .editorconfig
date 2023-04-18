@@ -10,3 +10,6 @@ indent_size = 2
 
 [*.{lua,conf,sh}]
 indent_size = 4
+
+[config]
+indent_size = 4
