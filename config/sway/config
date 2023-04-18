@@ -223,7 +223,8 @@ bar {
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %I:%M:%S %p'; do :; done
+    status_command \
+        while ~/.config/sway/scripts/bar_status.sh; do sleep 0.5; done
 
     colors {
         statusline #ffffff
