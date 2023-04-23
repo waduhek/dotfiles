@@ -250,7 +250,4 @@ bar {
 # Set the font to Hack Nerd font globally
 font "Hack Nerd Font Mono" 10
 
-# Disable XWayland. This is done mainly to force Firefox to use Wayland.
-xwayland disable
-
 include /etc/sway/config.d/*
