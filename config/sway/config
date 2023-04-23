@@ -86,15 +86,24 @@ exec swayidle -w \
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+e exec swaynag \
+        -t warning \
+        -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' \
+        -B 'Yes, exit sway' 'swaymsg exit'
     # Suspend Sway
     #
     # Locks the screen then suspends the session
     bindsym $mod+Shift+s exec ~/.config/sway/scripts/suspend_locker.sh
     # Restart the system
-    bindsym $mod+Shift+r exec swaynag -t warning -m 'You pressed the restart shortcut. Do you really want to restart?' -B 'Yes, restart' 'reboot'
+    bindsym $mod+Shift+r exec swaynag \
+        -t warning \
+        -m 'You pressed the restart shortcut. Do you really want to restart?' \
+        -B 'Yes, restart' 'reboot'
     # Shutdown the system
-    bindsym $mod+Shift+p exec swaynag -t warning -m 'You pressed the power off shortcut. Do you really want to power off?' -B 'Yes, power off' 'poweroff'
+    bindsym $mod+Shift+p exec swaynag \
+        -t warning \
+        -m 'You pressed the power off shortcut. Do you really want to power off?' \
+        -B 'Yes, power off' 'poweroff'
 
 # Moving around:
 #
@@ -177,7 +186,9 @@ exec swayidle -w \
 
     # Move all to workspace root
     # Taken from https://www.reddit.com/r/swaywm/comments/kzr2xl/comment/gjphtaa/
-    bindsym $mod+ctrl+a [tiling workspace="__focused__"] move workspace "reorder"; [workspace="reorder"] move workspace current; focus child
+    bindsym $mod+ctrl+a \
+        [tiling workspace="__focused__"] move workspace "reorder"; \
+        [workspace="reorder"] move workspace current; focus child
 #
 # Scratchpad:
 #
