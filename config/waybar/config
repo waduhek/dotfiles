@@ -38,7 +38,7 @@
         "format": "{usage}% "
     },
     "memory": {
-        "format": "{}% "
+        "format": "{used}G "
     },
     "temperature": {
         // "thermal-zone": 2,
