@@ -30,8 +30,9 @@
         "spacing": 10
     },
     "clock": {
-        "tooltip-format": "{:%Y-%m-%d | %H:%M}",
-        "format-alt": "{:%Y-%m-%d}"
+        "format": "{:%Y-%m-%d %r}",
+        "interval": 1,
+        "tooltip": false
     },
     "cpu": {
         "format": "{usage}% "
