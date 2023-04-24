@@ -8,13 +8,13 @@
     "modules-center": [],
     "modules-right": ["tray","pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "battery", "battery#bat2", "clock"],
     // Modules configuration
-     "sway/workspaces": {
-         "disable-scroll": true,
-         "disable-markup" : false,
-         "all-outputs": true,
-         // "format": "  {icon}  ",
-         "format":"{icon}",
-     },
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "disable-markup" : false,
+        "all-outputs": true,
+        // "format": "  {icon}  ",
+        "format":"{icon}",
+    },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
