@@ -3,7 +3,7 @@ local telescope_builtin = require("telescope.builtin")
 -- Open find file prompt. The finder will include hidden files and
 -- files in `.gitignore`
 vim.keymap.set("n", "<leader>ff", function ()
-    telescope_builtin.find_files({ hidden = true, no_ignore = true })
+    telescope_builtin.find_files({ hidden = true })
 end)
 -- Open live grep prompt
 vim.keymap.set("n", "<leader>fg", telescope_builtin.live_grep)
