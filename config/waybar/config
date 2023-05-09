@@ -38,7 +38,8 @@
         "format": "{usage}% "
     },
     "memory": {
-        "format": "{used}G "
+        "format": "{used}G ",
+        "interval": 10
     },
     "temperature": {
         // "thermal-zone": 2,
