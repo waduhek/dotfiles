@@ -40,10 +40,21 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 -- Add required servers here.
 local servers = require("constants.lsp_servers").get_lsp_servers()
 for _, lsp in ipairs(servers) do
-    lspconfig[lsp].setup {
-        on_attach = on_attach,
-        capabilities = capabilities
-    }
+    local lsp_name = lsp.name
+    local lsp_settings = lsp.settings
+
+    if lsp_settings ~= nil then
+        lspconfig[lsp_name].setup {
+            on_attach = on_attach,
+            capabilities = capabilities,
+            settings = lsp_settings,
+        }
+    else
+        lspconfig[lsp_name].setup {
+            on_attach = on_attach,
+            capabilities = capabilities,
+        }
+    end
 end
 
 -- nvim-cmp setup
