@@ -2,20 +2,14 @@
 
 echo "### Hack Nerd Font ###"
 
-git_path="https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts"
+git_path="https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts"
 font_name="Hack"
 font_styles=("Regular" "Italic" "Bold" "BoldItalic")
 font_files=(
-    "Hack%20Regular%20Nerd%20Font%20Complete%20Mono.ttf"
-    "Hack%20Italic%20Nerd%20Font%20Complete%20Mono.ttf"
-    "Hack%20Bold%20Nerd%20Font%20Complete%20Mono.ttf"
-    "Hack%20Bold%20Italic%20Nerd%20Font%20Complete%20Mono.ttf"
-)
-saved_font_file_names=(
-    "HackRegularNerdFontCompleteMono.ttf"
-    "HackItalicNerdFontCompleteMono.ttf"
-    "HackBoldNerdFontCompleteMono.ttf"
-    "HackBoldItalicNerdFontCompleteMono.ttf"
+    "HackNerdFontMono-Regular.ttf"
+    "HackNerdFontMono-Italic.ttf"
+    "HackNerdFontMono-Bold.ttf"
+    "HackNerdFontMono-BoldItalic.ttf"
 )
 
 echo ">>> Checking if user fonts directory is present"
@@ -37,9 +31,8 @@ for i in "${!font_styles[@]}"
 do
     curr_font_style=${font_styles[$i]}
     curr_font_file=${font_files[$i]}
-    curr_saved_font_file=${saved_font_file_names[$i]}
 
-    curl -fLo "${font_dir}/${curr_saved_font_file}" "${git_path}/${font_name}/${curr_font_style}/complete/${curr_font_file}"
+    curl -fLo "${font_dir}/${curr_font_file}" "${git_path}/${font_name}/${curr_font_style}/${curr_font_file}"
 done
 
 echo ">>> Updating font cache"
