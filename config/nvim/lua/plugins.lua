@@ -46,7 +46,7 @@ return require("packer").startup(function(use)
 
     -- Feline statusline
     use {
-        "feline-nvim/feline.nvim",
+        "freddiehaddad/feline.nvim",
         config = function()
             require("feline").setup()
         end
