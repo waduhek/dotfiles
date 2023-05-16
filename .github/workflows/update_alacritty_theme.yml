@@ -1,0 +1,27 @@
+# Updates the `alacritty-theme` submodule every week
+
+on:
+  schedule:
+    - cron: "0 0 * * 0"
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: recursive
+
+      - name: Set user configuration
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Update submodule
+        run: git submodule update --remote config/alacritty/alacritty-theme
+
+      - name: Commit changes
+        run: |
+          (git add config/alacritty/alacritty-theme \
+          && git diff --staged --quiet) \
+          || git commit -m "chore(alacritty): update `alacritty-theme`"
