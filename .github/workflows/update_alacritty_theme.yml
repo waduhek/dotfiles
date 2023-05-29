@@ -24,4 +24,4 @@ jobs:
         run: |
           (git add config/alacritty/alacritty-theme \
           && git diff --staged --quiet) \
-          || git commit -m "chore(alacritty): update `alacritty-theme`"
+          || git commit -m "chore(alacritty): update \`alacritty-theme\`"
