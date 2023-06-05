@@ -18,3 +18,5 @@ vim.keymap.set("n", "<leader>fb", telescope_builtin.buffers)
 vim.keymap.set("n", "<leader>fh", telescope_builtin.help_tags)
 -- Show references of the word under the cursor using LSP
 vim.keymap.set("n", "<leader>gr", telescope_builtin.lsp_references)
+-- Show symbols in the document using LSP
+vim.keymap.set("n", "<leader>fd", telescope_builtin.lsp_document_symbols)
