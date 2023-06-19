@@ -35,18 +35,20 @@
         "tooltip": false
     },
     "cpu": {
-        "format": "{usage}% "
+        "format": "{usage}% ",
+        "interval": 1
     },
     "memory": {
         "format": "{used}G ",
-        "interval": 10
+        "interval": 1
     },
     "temperature": {
         // "thermal-zone": 2,
         // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "critical-threshold": 80,
         // "format-critical": "{temperatureC}°C ",
-        "format": "{temperatureC}°C "
+        "format": "{temperatureC}°C ",
+        "interval": 1
     },
     "backlight": {
         // "device": "acpi_video1",
