@@ -101,4 +101,6 @@ return require("packer").startup(function(use)
     use "editorconfig/editorconfig-vim"
 
     use "tpope/vim-surround"
+
+    use "tpope/vim-fugitive"
 end)
