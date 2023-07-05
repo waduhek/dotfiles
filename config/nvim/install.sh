@@ -24,7 +24,7 @@ dest_lua_dir=$(construct_path "$app_config_dest" "lua")
 if [ ! -d "$dest_lua_dir" ]
 then
     echo ">>> Lua directory does not exist. Creating..."
-    mkdir "$dest_lua_dir"
+    mkdir --parents "$dest_lua_dir"
 fi
 
 echo ">>> Checking if constants folder exists"
