@@ -1,5 +1,5 @@
 import:
-  - ~/.config/alacritty/alacritty-theme/themes/carbonfox.yaml
+  - ~/.config/alacritty/alacritty-theme/themes/rose-pine.yaml
 
 font:
   normal:
