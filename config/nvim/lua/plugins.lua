@@ -49,15 +49,15 @@ return require("packer").startup(function(use)
         end
     }
 
-    -- Nightfox colorscheme
-    use "EdenEast/nightfox.nvim"
-
-    -- Feline statusline
+    -- Rose-pine colorscheme
     use {
-        "freddiehaddad/feline.nvim",
-        config = function()
-            require("feline").setup()
-        end
+        "rose-pine/neovim",
+        as = "rose-pine",
+    }
+
+    -- Lualine statusline
+    use {
+        "nvim-lualine/lualine.nvim",
     }
 
     -- Tabby tabline
