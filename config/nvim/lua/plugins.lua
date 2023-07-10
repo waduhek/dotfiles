@@ -93,8 +93,6 @@ return require("packer").startup(function(use)
         end
     }
 
-    use "editorconfig/editorconfig-vim"
-
     use "tpope/vim-surround"
 
     use "tpope/vim-fugitive"
