@@ -55,11 +55,6 @@ return require("packer").startup(function(use)
         as = "rose-pine",
     }
 
-    -- Lualine statusline
-    use {
-        "nvim-lualine/lualine.nvim",
-    }
-
     -- Tabby tabline
     use {
         "nanozuki/tabby.nvim",
