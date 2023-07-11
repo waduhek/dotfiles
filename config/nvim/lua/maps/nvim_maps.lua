@@ -17,3 +17,12 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
+
+-- =================== Git mappings ===================
+-- Open vim-fugitive
+vim.keymap.set("n", "<leader>G", vim.cmd.Git)
+
+-- Select the the left buffer in diff mode (only works for vim-fugitive diffs)
+vim.keymap.set("n", "<leader>ga", "<Cmd>diffget //2<CR>")
+-- Select the the right buffer in diff mode (only works for vim-fugitive diffs)
+vim.keymap.set("n", "<leader>gd", "<Cmd>diffget //3<CR>")
