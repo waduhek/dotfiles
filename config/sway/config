@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term alacritty -e tmux
+set $term alacritty
 # Preferred browser
 set $browser firefox
 # Your preferred application launcher
@@ -26,13 +26,6 @@ set $menu bemenu-run --list 10 | xargs swaymsg exec --
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-#
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
-output 'BNQ BenQ EX2510 5CL01826019' mode 1920x1080@143.981Hz
 
 ### Idle configuration
 #
@@ -260,5 +253,8 @@ bar {
 #
 # Set the font to Hack Nerd font globally
 font "Hack Nerd Font Mono" 10
+
+# Device specific config goes here.
+include ./pc_config.conf
 
 include /etc/sway/config.d/*
