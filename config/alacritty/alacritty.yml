@@ -1,6 +1,11 @@
 import:
   - ~/.config/alacritty/alacritty-theme/themes/rose-pine.yaml
 
+colors:
+  cursor:
+    text: CellBackground
+    cursor: CellForeground
+
 font:
   normal:
     family: Hack Nerd Font Mono
