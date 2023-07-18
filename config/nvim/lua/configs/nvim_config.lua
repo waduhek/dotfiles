@@ -32,3 +32,6 @@ vim.opt.wrap = false
 
 -- Always show the tabline
 vim.opt.showtabline = 2
+
+-- Disable GUI cursor
+vim.opt.guicursor = ""
