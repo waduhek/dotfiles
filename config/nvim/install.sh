@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 echo "### NeoVim ###"
 source "scripts/util.sh"
