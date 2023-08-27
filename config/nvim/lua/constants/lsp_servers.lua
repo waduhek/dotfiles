@@ -9,7 +9,7 @@ function P.get_lsp_servers()
         -- installation. For the settings, check the documentation for the 
         -- server. Example:
         -- {
-        --     name = "rust-analyser",
+        --     name = "rust_analyser",
         --     settings = {
         --         ['rust-analyzer'] = {
         --             check = {
