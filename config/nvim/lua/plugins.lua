@@ -47,6 +47,11 @@ return require("lazy").setup({
         "rose-pine/neovim",
         priority = 1000,
         as = "rose-pine",
+        config = function()
+            require("rose-pine").setup({
+                disable_italics = true,
+            })
+        end
     },
 
     -- Tabby tabline
