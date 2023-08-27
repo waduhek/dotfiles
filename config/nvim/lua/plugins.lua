@@ -19,28 +19,33 @@ return require("lazy").setup({
     "neovim/nvim-lspconfig",
 
     -- Autocompletion plugin
-    "hrsh7th/nvim-cmp",
-
-    -- LSP source for nvim-cmp
-    "hrsh7th/cmp-nvim-lsp",
-
-    -- Snippets source for nvim-cmp
-    "saadparwaiz1/cmp_luasnip",
-
-    -- Snippets plugin
     {
-        "L3MON4D3/LuaSnip",
-        config = function()
-            require("luasnip").setup({
-                region_check_events = "CursorHold,InsertLeave,InsertEnter",
-                delete_check_events = "TextChanged,InsertEnter",
-            })
-        end
+        "hrsh7th/nvim-cmp",
+        event = "InsertEnter",
+        dependencies = {
+            -- LSP source for nvim-cmp
+            "hrsh7th/cmp-nvim-lsp",
+
+            -- Snippets source for nvim-cmp
+            "saadparwaiz1/cmp_luasnip",
+
+            -- Snippets plugin
+            {
+                "L3MON4D3/LuaSnip",
+                config = function()
+                    require("luasnip").setup({
+                        region_check_events = "CursorHold,InsertLeave,InsertEnter",
+                        delete_check_events = "TextChanged,InsertEnter",
+                    })
+                end
+            },
+        },
     },
 
     -- Rose-pine colorscheme
     {
         "rose-pine/neovim",
+        priority = 1000,
         as = "rose-pine",
     },
 
