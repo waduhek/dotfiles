@@ -1,99 +1,100 @@
--- Autocommand to automatically run `PackerCompile` when this file changes.
-vim.cmd([[
-    augroup packer_user_config
-        autocmd!
-        autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-    augroup end
-]])
-
-return require("packer").startup(function(use)
-    -- Manage packer itself
-    use "wbthomason/packer.nvim"
-
+return require("lazy").setup({
     -- Dev icons
-    use "nvim-tree/nvim-web-devicons"
+    "nvim-tree/nvim-web-devicons",
 
     -- NvimTree file explorer
-    use "nvim-tree/nvim-tree.lua"
+    "nvim-tree/nvim-tree.lua",
 
     -- Tree-sitter for parsing language and providing syntax highlighting
-    use {
+    {
         "nvim-treesitter/nvim-treesitter",
-        run = function()
+        build = function()
             require("nvim-treesitter.install").update({ with_sync = true })
         end
-    }
+    },
 
-    use "nvim-treesitter/nvim-treesitter-context"
+    "nvim-treesitter/nvim-treesitter-context",
 
     -- LSP configuration
-    use "neovim/nvim-lspconfig"
+    "neovim/nvim-lspconfig",
 
     -- Autocompletion plugin
-    use "hrsh7th/nvim-cmp"
+    {
+        "hrsh7th/nvim-cmp",
+        event = "InsertEnter",
+        dependencies = {
+            -- LSP source for nvim-cmp
+            "hrsh7th/cmp-nvim-lsp",
 
-    -- LSP source for nvim-cmp
-    use "hrsh7th/cmp-nvim-lsp"
+            "hrsh7th/cmp-buffer",
 
-    -- Snippets source for nvim-cmp
-    use "saadparwaiz1/cmp_luasnip"
+            -- Snippets source for nvim-cmp
+            "saadparwaiz1/cmp_luasnip",
 
-    -- Snippets plugin
-    use {
-        "L3MON4D3/LuaSnip",
-        config = function()
-            require("luasnip").setup({
-                region_check_events = "CursorHold,InsertLeave,InsertEnter",
-                delete_check_events = "TextChanged,InsertEnter",
-            })
-        end
-    }
+            -- Snippets plugin
+            {
+                "L3MON4D3/LuaSnip",
+                config = function()
+                    require("luasnip").setup({
+                        region_check_events = "CursorHold,InsertLeave,InsertEnter",
+                        delete_check_events = "TextChanged,InsertEnter",
+                    })
+                end
+            },
+        },
+    },
 
     -- Rose-pine colorscheme
-    use {
+    {
         "rose-pine/neovim",
+        priority = 1000,
         as = "rose-pine",
-    }
+        config = function()
+            require("rose-pine").setup({
+                disable_italics = true,
+            })
+        end
+    },
 
     -- Tabby tabline
-    use {
+    {
         "nanozuki/tabby.nvim",
         config = function()
             require("tabby").setup()
             require("tabby.tabline").use_preset("tab_only")
         end
-    }
+    },
 
     -- Git provider
-    use {
+    {
         "lewis6991/gitsigns.nvim",
         config = function()
             require("gitsigns").setup()
         end
-    }
+    },
 
     -- Picker for finding files, text, etc.
-    use {
+    {
         "nvim-telescope/telescope.nvim",
         tag = "0.1.2",
-        requires = {
-            { "nvim-lua/plenary.nvim" },
-            { "nvim-telescope/telescope-live-grep-args.nvim" }
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope-live-grep-args.nvim",
         },
         config = function()
             require("telescope").load_extension("live_grep_args")
         end
-    }
+    },
 
     -- Error viewer
-    use {
+    {
         "folke/trouble.nvim",
         config = function()
             require("trouble").setup()
         end
-    }
+    },
 
-    use "tpope/vim-surround"
+    "tpope/vim-surround",
 
-    use "tpope/vim-fugitive"
-end)
+    "tpope/vim-fugitive",
+})

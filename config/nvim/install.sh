@@ -7,17 +7,6 @@ curr_dir=$(pwd)
 app_dir="config/nvim"
 app_config_dest=$(construct_path "$HOME" ".config/nvim")
 
-echo ">>> Checking if Packer.nvim is installed"
-nvim_pack_dir=$(construct_path "$HOME" ".local/share/nvim/site/pack/packer")
-
-if [ ! -d "$nvim_pack_dir" ]
-then
-    echo ">>> Packer.nvim was not found. Installing..."
-    git clone --depth 1 https://github.com/wbthomason/packer.nvim "$(construct_path "$nvim_pack_dir" "start" "packer.nvim")"
-else
-    echo ">>> Packer.nvim was found"
-fi
-
 echo ">>> Checking if lua directory exists"
 dest_lua_dir=$(construct_path "$app_config_dest" "lua")
 
