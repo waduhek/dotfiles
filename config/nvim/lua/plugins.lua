@@ -32,15 +32,7 @@ return require("lazy").setup({
             "saadparwaiz1/cmp_luasnip",
 
             -- Snippets plugin
-            {
-                "L3MON4D3/LuaSnip",
-                config = function()
-                    require("luasnip").setup({
-                        region_check_events = "CursorHold,InsertLeave,InsertEnter",
-                        delete_check_events = "TextChanged,InsertEnter",
-                    })
-                end
-            },
+            "L3MON4D3/LuaSnip",
         },
     },
 
