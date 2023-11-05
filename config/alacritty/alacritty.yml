@@ -1,5 +1,5 @@
 import:
-  - ~/.config/alacritty/alacritty-theme/themes/rose-pine.yaml
+  - ~/.config/alacritty/alacritty-theme/themes/catppuccin_mocha.yaml
 
 colors:
   cursor:
