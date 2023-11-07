@@ -36,14 +36,18 @@ return require("lazy").setup({
         },
     },
 
-    -- Rose-pine colorscheme
+    -- Catppuccin theme
     {
-        "rose-pine/neovim",
+        "catppuccin/nvim",
+        name = "catppuccin",
         priority = 1000,
-        as = "rose-pine",
         config = function()
-            require("rose-pine").setup({
-                disable_italics = true,
+            require("catppuccin").setup({
+                no_italic = true,
+                integrations = {
+                    lsp_trouble = true,
+                    treesitter_context = true,
+                },
             })
         end
     },

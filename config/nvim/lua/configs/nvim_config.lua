@@ -8,7 +8,7 @@ vim.opt.expandtab = true
 vim.api.nvim_command("filetype plugin indent on")
 
 -- Use Carbonfox theme
-vim.cmd("colorscheme rose-pine")
+vim.cmd("colorscheme catppuccin")
 
 -- Show a vertical line after 80 characters
 vim.opt.colorcolumn = "80"
