@@ -6,3 +6,4 @@ bash config/nvim/install.sh
 bash config/tmux/install.sh
 bash config/sway/install.sh
 bash config/waybar/install.sh
+bash config/swaylock/install.sh
