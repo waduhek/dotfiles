@@ -72,24 +72,10 @@ cmp.setup {
             behavior = cmp.ConfirmBehavior.Replace,
             select = false,
         },
-        ["<Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-                cmp.select_next_item()
-            elseif luasnip.expandable() then
-                luasnip.expand()
-            else
-                fallback()
-            end
-        end, { "i", "s" }),
-        ["<S-Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-                cmp.select_prev_item()
-            elseif luasnip.expandable() then
-                luasnip.expand()
-            else
-                fallback()
-            end
-        end, { "i", "s" }),
+        ["<Tab>"] = cmp.mapping.confirm {
+            behavior = cmp.ConfirmBehavior.Replace,
+            select = false,
+        },
     }),
     sources = cmp.config.sources({
         { name = "nvim_lsp" },
