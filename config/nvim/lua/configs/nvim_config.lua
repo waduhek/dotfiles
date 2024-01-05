@@ -30,5 +30,5 @@ vim.opt.termguicolors = true
 -- Disable line wrapping.
 vim.opt.wrap = false
 
--- Always show the tabline
-vim.opt.showtabline = 2
+-- Never show the tabline
+vim.opt.showtabline = 0
