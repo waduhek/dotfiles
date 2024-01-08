@@ -52,15 +52,6 @@ return require("lazy").setup({
         end
     },
 
-    -- Tabby tabline
-    {
-        "nanozuki/tabby.nvim",
-        config = function()
-            require("tabby").setup()
-            require("tabby.tabline").use_preset("tab_only")
-        end
-    },
-
     -- Git provider
     {
         "lewis6991/gitsigns.nvim",
@@ -93,4 +84,13 @@ return require("lazy").setup({
     "tpope/vim-surround",
 
     "tpope/vim-fugitive",
+
+    {
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope.nvim",
+        },
+    },
 })
