@@ -32,3 +32,6 @@ vim.opt.wrap = false
 
 -- Never show the tabline
 vim.opt.showtabline = 0
+
+-- Show the current branch using Fugitive plugin.
+vim.opt.statusline = "%<%f %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%) %P"
