@@ -2,9 +2,6 @@ return require("lazy").setup({
     -- Dev icons
     "nvim-tree/nvim-web-devicons",
 
-    -- NvimTree file explorer
-    "nvim-tree/nvim-tree.lua",
-
     -- Tree-sitter for parsing language and providing syntax highlighting
     {
         "nvim-treesitter/nvim-treesitter",
