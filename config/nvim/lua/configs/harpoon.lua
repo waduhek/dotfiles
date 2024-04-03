@@ -26,7 +26,7 @@ function M.toggle_telescope(harpoon_files)
                 "dd",
                 function()
                     local selection = action_state.get_selected_entry()
-                    harpoon_files:removeAt(selection.index)
+                    harpoon_files:remove_at(selection.index)
 
                     action.close(prompt_bufnr)
                 end
