@@ -20,3 +20,5 @@ vim.keymap.set("n", "<leader>fh", telescope_builtin.help_tags)
 vim.keymap.set("n", "<leader>gr", telescope_builtin.lsp_references)
 -- Show symbols in the document using LSP
 vim.keymap.set("n", "<leader>fd", telescope_builtin.lsp_document_symbols)
+-- Open harpoon marks
+vim.keymap.set("n", "<C-q>", telescope.extensions.harpoon.marks)
