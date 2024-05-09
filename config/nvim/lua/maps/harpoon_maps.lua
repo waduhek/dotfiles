@@ -1,5 +1,14 @@
 local harpoon = require("harpoon")
 
+-- Open harpoon quick menu
+vim.keymap.set(
+    "n",
+    "<C-q>",
+    function ()
+        harpoon.ui:toggle_quick_menu(harpoon:list())
+    end
+)
+
 -- Harpoon the current file
 vim.keymap.set(
     "n",
