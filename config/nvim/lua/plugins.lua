@@ -94,4 +94,11 @@ return require("lazy").setup({
             require("harpoon"):setup()
         end
     },
+
+    {
+        "j-hui/fidget.nvim",
+        config = function ()
+            require("fidget").setup()
+        end
+    },
 })
