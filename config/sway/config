@@ -86,7 +86,7 @@ exec swayidle -w \
     # Suspend Sway
     #
     # Locks the screen then suspends the session
-    bindsym $mod+Shift+s exec ~/.config/sway/scripts/suspend_locker.sh
+    bindsym $mod+Shift+s exec systemctl suspend
     # Restart the system
     bindsym $mod+Shift+r exec swaynag \
         -t warning \
