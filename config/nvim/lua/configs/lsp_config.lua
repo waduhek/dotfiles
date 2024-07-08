@@ -2,6 +2,9 @@ local lspconfig = require("lspconfig")
 local luasnip = require("luasnip")
 local cmp = require("cmp")
 
+vim.cmd [[autocmd! ColorScheme * highlight NormalFloat guibg=#1f2335]]
+vim.cmd [[autocmd! ColorScheme * highlight FloatBorder guifg=white guibg=#1f2335]]
+
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
@@ -84,3 +87,10 @@ cmp.setup {
         { name = "buffer" }
     }),
 }
+
+local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+  opts = opts or {}
+  opts.border = opts.border or "single"
+  return orig_util_open_floating_preview(contents, syntax, opts, ...)
+end
