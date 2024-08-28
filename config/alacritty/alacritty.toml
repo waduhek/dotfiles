@@ -24,3 +24,6 @@ style = "Italic"
 [font.bold_italic]
 family = "Hack Nerd Font Mono"
 style = "Bold Italic"
+
+[mouse]
+hide_when_typing = true
