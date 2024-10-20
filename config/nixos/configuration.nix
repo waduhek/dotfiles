@@ -9,6 +9,8 @@
 
     system.stateVersion = "24.05";
 
+    nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
     # Use the GRUB bootloader.
     boot.loader.grub.device = "nodev";
     boot.loader.grub.efiSupport = true;
