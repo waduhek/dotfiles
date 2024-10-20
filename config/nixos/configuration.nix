@@ -30,6 +30,7 @@
         isNormalUser = true;
         extraGroups = [ "wheel" "networkmanager"];
     };
+    users.defaultUserShell = pkgs.zsh;
 
     # Audio setup.
     services.pipewire = {
