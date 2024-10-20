@@ -94,7 +94,7 @@
     ];
 
     fonts.packages = with pkgs; [
-        (nerdfonts.override { fonts = [ "HackNerdFont" ] })
+        (nerdfonts.override { fonts = [ "HackNerdFont" ]; })
     ];
 
     # Enable OpenSSH daemon.
