@@ -90,6 +90,11 @@
         swaylock
         bemenu
         swaybg
+        nerdfonts
+    ];
+
+    fonts.packages = with pkgs; [
+        (nerdfonts.override { fonts = [ "HackNerdFont" ] })
     ];
 
     # Enable OpenSSH daemon.
