@@ -16,7 +16,7 @@
     boot.kernelModules = [ "kvm-intel" ];
     boot.extraModulePackages = [ ];
 
-    filSystems = {
+    fileSystems = {
         "/" = {
             device = "/dev/disk/by-label/NixOS";
             fsType = "ext4";
