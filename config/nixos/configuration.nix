@@ -86,6 +86,10 @@
         slurp # Allows selecting portions of the screen.
         wl-clipboard # Provide `wl-copy` and `wl-paste` commands for clipboard.
         vulkan-validation-layers # For Vulkan support.
+        waybar
+        swaylock
+        bemenu
+        swaybg
     ];
 
     # Enable OpenSSH daemon.
