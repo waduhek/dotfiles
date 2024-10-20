@@ -94,7 +94,7 @@
         bemenu
         swaybg
         nerdfonts
-        libclang
+        clang
     ];
 
     fonts.packages = with pkgs; [
