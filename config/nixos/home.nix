@@ -22,22 +22,22 @@
 
     home.file = {
         ".tmux.conf" = {
-            source = config.lib.file.mkOutOfStoreSymlink ../tmux/tmux.conf;
+            source = ../tmux/tmux.conf;
         };
         ".config/alacritty" = {
-            source = config.lib.file.mkOutOfStoreSymlink ../alacritty;
+            source = ../alacritty;
         };
         ".config/sway" = {
-            source = config.lib.file.mkOutOfStoreSymlink ../sway;
+            source = ../sway;
         };
         ".config/swaylock" = {
-            source = config.lib.file.mkOutOfStoreSymlink ../swaylock;
+            source = ../swaylock;
         };
         ".config/waybar" = {
-            source = config.lib.file.mkOutOfStoreSymlink ../waybar;
+            source = ../waybar;
         };
         ".config/nvim" = {
-            source = config.lib.file.mkOutOfStoreSymlink ../nvim;
+            source = ../nvim;
         };
     };
 }
