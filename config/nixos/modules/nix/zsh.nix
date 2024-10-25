@@ -21,7 +21,7 @@ let
             # Start Sway with unsupported GPU option for it to work with Nvidia.
             exec sway --unsupported-gpu
         fi
-    ''
+    '';
 
     # Shell init script for starting sway without Nvidia.
     startWithoutNvidia = ''
@@ -35,7 +35,7 @@ let
 
             exec sway
         fi
-    ''
+    '';
 in {
     options = {
         sys.shell.zsh = {
@@ -58,7 +58,7 @@ in {
                 if cfg.usingNvidia
                 then startWithNvidia
                 else startWithoutNvidia
-            else ""
+            else "";
 
             ohMyZsh = {
                 enable = true;

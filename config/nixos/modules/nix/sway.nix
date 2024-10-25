@@ -3,7 +3,7 @@ let
     cfg = config.sys.desktop.sway;
 in {
     options = {
-        sys.desktop.sway.enable = lib.mkEnableOption "Enable Sway and its config"
+        sys.desktop.sway.enable = lib.mkEnableOption "Enable Sway and its config";
     };
 
     config = lib.mkIf cfg.enable {
