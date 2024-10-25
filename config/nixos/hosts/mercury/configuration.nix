@@ -44,7 +44,7 @@
             enable = true;
             defaultEditor = true;
         };
-        zsh = {
+        shell.zsh = {
             enable = true;
             defaultShell = true;
             swayEnabled = true;
