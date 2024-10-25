@@ -4,7 +4,7 @@ let
 in {
     options = {
         sys.terminal.alacritty.enable = lib.mkEnableOption "Enables Alacritty";
-    }
+    };
 
     config = lib.mkIf cfg.enable {
         environment.systemPackages = with pkgs; [
