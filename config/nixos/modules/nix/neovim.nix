@@ -2,7 +2,7 @@
 let
     cfg = config.sys.editor.neovim;
 in {
-    option = {
+    options = {
         sys.editor.neovim = {
             enable = lib.mkEnableOption "Setup NeoVim";
             defaultEditor = lib.mkEnableOption "Set NeoVim as default editor";
