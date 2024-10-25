@@ -7,7 +7,7 @@ in {
     };
 
     config = lib.mkIf cfg.enable {
-        environments.systemPackages = with pkgs; [
+        environment.systemPackages = with pkgs; [
             nerdfonts
         ];
 

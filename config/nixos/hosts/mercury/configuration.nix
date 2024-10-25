@@ -6,7 +6,6 @@
         ./hardware-configuration.nix
 
         ../../modules/nix
-        ../../modules/home
     ];
 
     system.stateVersion = "24.05";

@@ -67,6 +67,6 @@ in {
             };
         };
 
-        users.defaultShell = if cfg.defaultShell then pkgs.zsh else null;
+        users.defaultUserShell = if cfg.defaultShell then pkgs.zsh else null;
     };
 }
