@@ -20,19 +20,35 @@
 
         lib = nixpkgs.lib;
     in {
-        nixosConfigurations.nixie = lib.nixosSystem {
-            inherit system;
+        nixosConfigurations = {
+            nixie = lib.nixosSystem {
+                inherit system;
 
-            modules = [
-                ./config/nixos/configuration.nix
-                home-manager.nixosModules.home-manager {
-                    home-manager = {
-                        useGlobalPkgs = true;
-                        useUserPackages = true;
-                        users.ryan = import ./config/nixos/home.nix;
-                    };
-                }
-            ];
+                modules = [
+                    ./config/nixos/configuration.nix
+                    home-manager.nixosModules.home-manager {
+                        home-manager = {
+                            useGlobalPkgs = true;
+                            useUserPackages = true;
+                            users.ryan = import ./config/nixos/home.nix;
+                        };
+                    }
+                ];
+            };
+
+            mercury = lib.nixosSystem {
+                inherit system;
+                modules = [
+                    ./config/nixos/hosts/mercury/configuration.nix
+                    home-manager.nixosModules.home-manager {
+                        home-manager = {
+                            useGlobalPkgs = true;
+                            useUserPackages = true;
+                            users.ryan = import ./config/nixos/hosts/mercury/users/ryan.nix;
+                        };
+                    }
+                ];
+            };
         };
     };
 }
