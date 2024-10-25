@@ -23,4 +23,14 @@
         defaultCacheTtl = 1800;
         enableSshSupport = true;
     };
+
+    # Config options set by modules.
+    sys = {
+        terminal = {
+            alacritty.enable = true;
+            tmux.enable = true;
+        };
+        desktop.sway.enable = true;
+        editor.neovim.enable = true;
+    };
 }

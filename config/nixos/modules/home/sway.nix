@@ -1,8 +1,11 @@
 { lib, config, ... }:
 let
-    # Config declared in sway.nix module.
     cfg = config.sys.desktop.sway;
 in {
+    options = {
+        sys.desktop.sway.enable = lib.mkEnableOption "Enable sway configuration";
+    };
+
     config = lib.mkIf cfg.enable {
         xdg.configFile = {
             sway = {

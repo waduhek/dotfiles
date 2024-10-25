@@ -1,8 +1,11 @@
 { lib, config, ... }:
 let
-    # Declared in neovim.nix module.
     cfg = config.sys.editor.neovim;
 in {
+    options = {
+        sys.editor.neovim.enable = lib.mkEnableOption "Enable NeoVim config";
+    };
+
     config = {
         xdg.configFile = {
             nvim = {

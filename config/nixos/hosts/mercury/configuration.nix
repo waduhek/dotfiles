@@ -35,26 +35,27 @@
         extraGroups = [ "wheel" "networkmanager"];
     };
 
-    sys.gpu.nvidia.enable = true;
-
-    # Audio setup.
-    sys.audio.pipewire.enable = true;
-
-    # Programs setup.
-    sys.desktop.sway.enable = true;
-    sys.editor.neovim.enable = true;
-    sys.shell.zsh = {
-        enable = true;
-        defaultShell = true;
-        swayEnabled = true;
-        usingNvidia = true;
+    # Config options set by modules.
+    sys = {
+        gpu.nvidia.enable = true;
+        audio.pipewire.enable = true;
+        desktop.sway.enable = true;
+        editor.neovim = {
+            enable = true;
+            defaultEditor = true;
+        };
+        zsh = {
+            enable = true;
+            defaultShell = true;
+            swayEnabled = true;
+            usingNvidia = true;
+        };
+        terminal = {
+            alacritty.enable = true;
+            tmux.enable = true;
+        };
+        fonts.nerdfonts.enable = true;
     };
-    sys.terminal = {
-        alacritty.enable = true;
-        tmux.enable = true;
-    };
-
-    sys.fonts.nerdfonts.enable = true;
 
     # Enable GNOME Keyring for allowing applications to request passwords.
     services.gnome.gnome-keyring.enable = true;
