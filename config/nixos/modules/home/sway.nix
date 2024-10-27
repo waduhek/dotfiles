@@ -9,7 +9,7 @@ in {
     config = lib.mkIf cfg.enable {
         xdg.configFile = {
             sway = {
-                source = ../../../nvim;
+                source = ../../../sway;
                 recursive = true;
             };
             swaylock = {
