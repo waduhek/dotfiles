@@ -44,7 +44,6 @@
             enable = true;
             defaultShell = true;
             swayEnabled = true;
-            usingNvidia = true;
         };
         terminal = {
             alacritty.enable = true;

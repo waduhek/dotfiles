@@ -30,7 +30,7 @@
                         home-manager = {
                             useGlobalPkgs = true;
                             useUserPackages = true;
-                            users.ryan = import ./config/nixos/hosts/testbox/home.nix
+                            users.ryan = import ./config/nixos/hosts/testbox/home.nix;
                         };
                     }
                 ];
