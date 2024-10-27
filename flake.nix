@@ -21,16 +21,16 @@
         lib = nixpkgs.lib;
     in {
         nixosConfigurations = {
-            nixie = lib.nixosSystem {
+            testbox = lib.nixosSystem {
                 inherit system;
 
                 modules = [
-                    ./config/nixos/configuration.nix
+                    ./config/nixos/hosts/testbox/configuration.nix
                     home-manager.nixosModules.home-manager {
                         home-manager = {
                             useGlobalPkgs = true;
                             useUserPackages = true;
-                            users.ryan = import ./config/nixos/home.nix;
+                            users.ryan = import ./config/nixos/hosts/testbox/home.nix
                         };
                     }
                 ];
