@@ -12,17 +12,6 @@ in {
             wrapperFeatures.gtk = true;
         };
 
-        # XDG Portal setup to get Sway to work.
-        xdg = {
-            portal = {
-                enable = true;
-                extraPortals = with pkgs; [
-                    xdg-desktop-portal-wlr
-                    xdg-desktop-portal-gtk
-                ];
-            };
-        };
-
         environment.systemPackages = with pkgs; [
             mako # Notification daemon for Sway.
             grim # Screenshot utility.
