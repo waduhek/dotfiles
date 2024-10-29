@@ -66,7 +66,6 @@
         light
         git
         librewolf
-        clang
     ];
 
     # Enable OpenSSH daemon.

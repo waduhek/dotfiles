@@ -1,4 +1,4 @@
-{ lib, config, ... }:
+{ lib, pkgs, config, ... }:
 let
     cfg = config.sys.editor.neovim;
 in {
@@ -14,5 +14,9 @@ in {
             enable = true;
             defaultEditor = cfg.defaultEditor;
         };
+
+        environment.systemPackages = with pkgs; [
+            clang
+        ];
     };
 }
