@@ -55,6 +55,7 @@
             tmux.enable = true;
         };
         fonts.nerdfonts.enable = true;
+        services.ssh.enable = true;
     };
 
     # Enable GNOME Keyring for allowing applications to request passwords.
@@ -67,7 +68,4 @@
         git
         librewolf
     ];
-
-    # Enable OpenSSH daemon.
-    services.openssh.enable = true;
 }

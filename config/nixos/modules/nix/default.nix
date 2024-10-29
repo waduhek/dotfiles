@@ -5,6 +5,7 @@
         ./fonts.nix
         ./neovim.nix
         ./nvidia.nix
+        ./ssh.nix
         ./sway.nix
         ./tmux.nix
         ./zsh.nix
