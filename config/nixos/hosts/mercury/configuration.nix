@@ -61,11 +61,21 @@
     # Enable GNOME Keyring for allowing applications to request passwords.
     services.gnome.gnome-keyring.enable = true;
 
+    # MIME type associations.
+    xdg.mime.defaultApplications = {
+        "application/pdf" = "librewolf.desktop";
+        "image/jpeg" = "librewolf.desktop";
+        "image/jpg" = "librewolf.desktop";
+        "image/png" = "librewolf.desktop";
+    };
+
     # System-wide packages.
     environment.systemPackages = with pkgs; [
         wget
         light
         git
         librewolf
+        xdg-utils
+        gnome.nautilus
     ];
 }
