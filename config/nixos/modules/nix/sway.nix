@@ -7,6 +7,8 @@ in {
     };
 
     config = lib.mkIf cfg.enable {
+        environment.etc.wallpapers.source = ../../../../wallpapers;
+
         programs.sway = {
             enable = true;
             wrapperFeatures.gtk = true;
