@@ -61,6 +61,11 @@
             docker.enable = true;
             kubernetes.enable = true;
         };
+        language = {
+            rust.enable = true;
+            go.enable = true;
+            python.enable = true;
+        };
     };
 
     # Enable GNOME Keyring for allowing applications to request passwords.

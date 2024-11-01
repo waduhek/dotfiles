@@ -1,5 +1,6 @@
 {
     imports = [
+        ./languages
         ./alacritty.nix
         ./audio.nix
         ./docker.nix
