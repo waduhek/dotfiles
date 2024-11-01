@@ -4,6 +4,7 @@
         ./audio.nix
         ./docker.nix
         ./fonts.nix
+        ./kubernetes.nix
         ./libreoffice.nix
         ./neovim.nix
         ./nvidia.nix

@@ -59,6 +59,7 @@
         productivity.libreoffice.enable = true;
         virtualisation = {
             docker.enable = true;
+            kubernetes.enable = true;
         };
     };
 
