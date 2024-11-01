@@ -57,6 +57,9 @@
         fonts.nerdfonts.enable = true;
         services.ssh.enable = true;
         productivity.libreoffice.enable = true;
+        virtualisation = {
+            docker.enable = true;
+        };
     };
 
     # Enable GNOME Keyring for allowing applications to request passwords.

@@ -2,6 +2,7 @@
     imports = [
         ./alacritty.nix
         ./audio.nix
+        ./docker.nix
         ./fonts.nix
         ./libreoffice.nix
         ./neovim.nix
