@@ -16,7 +16,18 @@ in {
         };
 
         environment.systemPackages = with pkgs; [
-            clang
+            clang # Required for Treesitter.
+
+            # LSP servers
+            rust-analyzer
+            gopls
+            nodePackages.bash-language-server
+            lua-language-server
+            yaml-language-server
+            marksman
+            pyright
+            nodePackages.typescript-language-server
+            nixd
         ];
     };
 }

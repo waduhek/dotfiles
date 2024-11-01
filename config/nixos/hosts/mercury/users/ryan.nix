@@ -49,6 +49,70 @@ let
         workspace 8 output $secondary_display
         workspace 10 output $secondary_display
     '';
+    nvimLspConstants = ''
+        local P = {}
+
+        function P.get_lsp_servers()
+            return {
+                {
+                    name = "rust_analyzer",
+                    settings = {
+                        ["rust-analyzer"] = {
+                            check = {
+                                allTargets = false,
+                            },
+                        },
+                    },
+                },
+                { name = "gopls" },
+                { name = "bashls" },
+                {
+                    name = "lua_ls",
+                    settings = {
+                        Lua = {
+                            runtime = {
+                                version = "LuaJIT",
+                            },
+                            diagnostics = {
+                                globals = { "vim" },
+                            },
+                            workspace = {
+                                library = vim.api.nvim_get_runtime_file("", true),
+                                checkThirdParty = false,
+                            },
+                            telemetry = {
+                                enable = false,
+                            },
+                        },
+                    },
+                },
+                {
+                    name = "yamlls",
+                    settings = {
+                        redhat = {
+                            telemetry = {
+                                enabled = false,
+                            },
+                        },
+                        yaml = {
+                            schemas = {
+                                ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.29.2-standalone/all.json"] = "k8s/**/*.{yaml,yml}",
+                                ["https://json.schemastore.org/kustomization.json"] = "kustomization.yaml",
+                                ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+                                ["https://json.schemastore.org/dependabot-2.0.json"] = "./github/dependabot.yaml",
+                                ["https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json"] = ".gitlab-ci.yaml",
+                                ["https://bitbucket.org/atlassianlabs/intellij-bitbucket-references-plugin/raw/master/src/main/resources/schemas/bitbucket-pipelines.schema.json"] = "bitbucket-pipelines.yaml"
+                            },
+                        },
+                    },
+                },
+                { name = "marksman" },
+                { name = "nixd" },
+            }
+        end
+
+        return P
+    '';
 in {
     imports = [
         ../../../modules/home
@@ -83,6 +147,9 @@ in {
             enable = true;
             pcConfig = swayPCConfig;
         };
-        editor.neovim.enable = true;
+        editor.neovim = {
+            enable = true;
+            lspConfig = nvimLspConstants;
+        };
     };
 }
