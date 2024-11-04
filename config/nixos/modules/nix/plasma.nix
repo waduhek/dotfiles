@@ -14,7 +14,5 @@ in {
             plasma-browser-integration
             konsole
         ];
-
-        environment.systemPackages = with pkgs; [ xorg.xinit ];
     };
 }
