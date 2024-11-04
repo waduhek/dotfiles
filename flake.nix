@@ -44,7 +44,10 @@
                         home-manager = {
                             useGlobalPkgs = true;
                             useUserPackages = true;
-                            users.ryan = import ./config/nixos/hosts/mercury/users/ryan.nix;
+                            users = {
+                                ryan = import ./config/nixos/hosts/mercury/users/ryan.nix;
+                                gaming = import ./config/nixos/hosts/mercury/users/gaming.nix;
+                            };
                         };
                     }
                 ];

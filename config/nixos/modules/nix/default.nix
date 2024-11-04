@@ -9,6 +9,7 @@
         ./libreoffice.nix
         ./neovim.nix
         ./nvidia.nix
+        ./plasma.nix
         ./ssh.nix
         ./sway.nix
         ./tmux.nix

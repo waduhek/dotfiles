@@ -29,17 +29,27 @@
     time.timeZone = "Asia/Kolkata";
 
     # User accounts.
-    users.users.ryan = {
-        description = "Ryan Noronha";
-        isNormalUser = true;
-        extraGroups = [ "wheel" "networkmanager"];
+    users.users = {
+        ryan = {
+            description = "Ryan Noronha";
+            isNormalUser = true;
+            extraGroups = [ "wheel" "networkmanager"];
+        };
+        gaming = {
+            description = "Ryan Noronha (Gaming)";
+            isNormalUser = true;
+            extraGroups =  [ "wheel" "networkmanager" ];
+        };
     };
 
     # Config options set by modules.
     sys = {
         gpu.nvidia.enable = true;
         audio.pipewire.enable = true;
-        desktop.sway.enable = true;
+        desktop = {
+            sway.enable = true;
+            plasma.enable = true;
+        };
         editor.neovim = {
             enable = true;
             defaultEditor = true;
