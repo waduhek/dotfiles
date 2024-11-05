@@ -12,8 +12,8 @@
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-    i18n.defaultLocale = "en_IN/UTF-8";
-    i18n.supportedLocales = [ "en_US.UTF-8/UTF-8" "en_IN/UTF-8" ];
+    i18n.defaultLocale = "en_IN.UTF-8";
+    i18n.supportedLocales = [ "all" ];
 
     # Allow Unfree software.
     nixpkgs.config.allowUnfree = true;
