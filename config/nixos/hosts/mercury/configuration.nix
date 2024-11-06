@@ -27,6 +27,18 @@
 
     # Enable NetworkManager.
     networking.networkmanager.enable = true;
+    networking.firewall = {
+        logReversePathDrops = true;
+        # Allow WireGuard connections on port 51820.
+        extraCommands = ''
+            ip46tables -t mangle -I nixos-fw-rpfilter -p udp -m udp --sport 51820 -j RETURN
+            ip46tables -t mangle -I nixos-fw-rpfilter -p udp -m udp --dport 51820 -j RETURN
+        '';
+        extraStopCommands = ''
+            ip46tables -t mangle -I nixos-fw-rpfilter -p udp -m udp --sport 51820 -j RETURN || true
+            ip46tables -t mangle -I nixos-fw-rpfilter -p udp -m udp --dport 51820 -j RETURN || true
+        '';
+    };
 
     # Timezone.
     time.timeZone = "Asia/Kolkata";
