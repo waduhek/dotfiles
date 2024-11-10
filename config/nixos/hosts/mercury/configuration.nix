@@ -18,9 +18,22 @@
     # Allow Unfree software.
     nixpkgs.config.allowUnfree = true;
 
-    # Use the GRUB bootloader.
-    boot.loader.grub.device = "nodev";
-    boot.loader.grub.efiSupport = true;
+    # Bootloader config.
+    boot.loader = {
+        efi.canTouchEfiVariables = true;
+        systemd-boot.enable = false;
+        grub = {
+            enable = true;
+            efiSupport = true;
+            mirroredBoots = [
+                {
+                    devices = [ "nodev" ];
+                    path = "/boot";
+                    efiBootloaderId = "NixOS";
+                }
+            ];
+        };
+    };
 
     # Hostname.
     networking.hostName = "mercury";
