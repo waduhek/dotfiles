@@ -1,14 +1,6 @@
 { lib, pkgs, config, ... }:
 let
     cfg = config.sys.desktop.sway;
-
-    # Use unstable nixpkgs till sway 1.10 lands in 24.11.
-    # TODO: Switch back to stable nixpkgs after 24.11.
-    unstablePkgs = import (fetchGit {
-        url = "https://github.com/nixos/nixpkgs";
-        ref = "nixos-unstable";
-        rev = "76612b17c0ce71689921ca12d9ffdc9c23ce40b2";
-    }) { inherit (pkgs) system; };
 in {
     options = {
         sys.desktop.sway.enable = lib.mkEnableOption "Enable Sway and its config";
@@ -32,7 +24,6 @@ in {
                 bemenu # Menu library.
                 swaybg # Background manager.
             ];
-            package = unstablePkgs.sway;
         };
     };
 }
