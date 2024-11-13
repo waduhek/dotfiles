@@ -1,4 +1,4 @@
-{ lib, config, pkgs, ... }:
+{ lib, config, ... }:
 let
     cfg = config.sys.language.go;
 in {
@@ -7,6 +7,6 @@ in {
     };
 
     config = lib.mkIf cfg.enable {
-        environment.systemPackages = with pkgs; [ go ];
+        programs.go.enable = true;
     };
 }

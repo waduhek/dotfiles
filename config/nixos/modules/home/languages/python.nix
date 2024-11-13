@@ -7,6 +7,6 @@ in {
     };
 
     config = lib.mkIf cfg.enable {
-        environment.systemPackages = with pkgs; [ python3 ];
+        home.packages = with pkgs; [ python3 ];
     };
 }

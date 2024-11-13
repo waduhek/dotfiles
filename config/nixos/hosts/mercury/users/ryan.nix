@@ -147,9 +147,20 @@ in {
             enable = true;
             pcConfig = swayPCConfig;
         };
+        fonts.nerdfonts = {
+            enable = true;
+            installFonts = [ "Hack" ];
+        };
         editor.neovim = {
             enable = true;
+            defaultEditor = true;
             lspConfig = nvimLspConstants;
         };
+        language = {
+            rust.enable = true;
+            go.enable = true;
+            python.enable = true;
+        };
+        productivity.libreoffice.enable = true;
     };
 }

@@ -7,6 +7,6 @@ in {
     };
 
     config = lib.mkIf cfg.enable {
-        environment.systemPackages = with pkgs; [ rustup ];
+        home.packages = with pkgs; [ rustup ];
     };
 }

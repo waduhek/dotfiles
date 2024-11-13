@@ -12,6 +12,10 @@
     home.packages = with pkgs; [ steam discord ];
 
     sys = {
+        fonts.nerdfonts = {
+            enable = true;
+            installFonts = [ "Hack" ];
+        };
         terminal = {
             alacritty.enable = true;
             tmux.enable = true;

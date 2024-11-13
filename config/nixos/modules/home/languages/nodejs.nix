@@ -7,6 +7,6 @@ in {
     };
 
     config = lib.mkIf cfg.enable {
-        environment.systemPackages = with pkgs; [ nodejs_22 ];
+        home.packages = with pkgs; [ nodejs_22 ];
     };
 }

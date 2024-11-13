@@ -78,31 +78,16 @@
             sway.enable = true;
             plasma.enable = true;
         };
-        editor.neovim = {
-            enable = true;
-            defaultEditor = true;
-        };
         shell.zsh = {
             enable = true;
             defaultShell = true;
             swayEnabled = true;
             usingNvidia = true;
         };
-        terminal = {
-            alacritty.enable = true;
-            tmux.enable = true;
-        };
-        fonts.nerdfonts.enable = true;
         services.ssh.enable = true;
-        productivity.libreoffice.enable = true;
         virtualisation = {
             docker.enable = true;
             kubernetes.enable = true;
-        };
-        language = {
-            rust.enable = true;
-            go.enable = true;
-            python.enable = true;
         };
     };
 

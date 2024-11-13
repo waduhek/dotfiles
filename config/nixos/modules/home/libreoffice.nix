@@ -7,8 +7,6 @@ in {
     };
 
     config = lib.mkIf cfg.enable {
-        environment.systemPackages = with pkgs; [
-            libreoffice-fresh
-        ];
+        home.packages = with pkgs; [ libreoffice-fresh ];
     };
 }
