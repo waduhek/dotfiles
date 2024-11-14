@@ -9,6 +9,9 @@ in {
     config = lib.mkIf cfg.enable {
         programs.tmux.enable = true;
 
-        home.file.".tmux.conf".source = ../../../tmux/tmux.conf;
+        xdg.configFile.tmux = {
+            source = ../../../tmux;
+            recursive = true;
+        };
     };
 }
