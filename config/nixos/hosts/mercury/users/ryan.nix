@@ -178,5 +178,6 @@ in {
             python.enable = true;
         };
         productivity.libreoffice.enable = true;
+        encryption.gpg.enable = true;
     };
 }
