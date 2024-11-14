@@ -147,12 +147,6 @@ in {
         };
     };
 
-    services.gpg-agent = {
-        enable = true;
-        defaultCacheTtl = 1800;
-        enableSshSupport = true;
-    };
-
     # Config options set by modules.
     sys = {
         terminal = {
