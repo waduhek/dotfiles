@@ -129,6 +129,22 @@ in {
         enable = true;
         userName = "Ryan Noronha";
         userEmail = "ryannor56a@proton.me";
+        extraConfig = {
+            core.editor = "nvim";
+
+            init.defaultBranch = "main";
+
+            diff.tool = "nvimdiff";
+            "difftool \"nvimdiff\"".cmd = "nvim -d $LOCAL $REMOTE";
+
+            merge.tool = "nvim";
+            "mergetool \"nvim\"".cmd = "nvim $MERGED";
+
+            pager = {
+                branch = false;
+                stash = false;
+            };
+        };
     };
 
     services.gpg-agent = {
