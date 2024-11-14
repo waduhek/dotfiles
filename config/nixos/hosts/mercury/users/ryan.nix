@@ -129,6 +129,10 @@ in {
         enable = true;
         userName = "Ryan Noronha";
         userEmail = "ryannor56a@proton.me";
+        signing = {
+            signByDefault = true;
+            key = "1CEABC4E67177BB7!";
+        };
         extraConfig = {
             core.editor = "nvim";
 
