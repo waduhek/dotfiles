@@ -13,7 +13,7 @@ in {
             enable = true;
             defaultCacheTtl = 1800;
             enableSshSupport = true;
-            pinentryPackage = pkgs.pinentry-tty;
+            pinentryPackage = pkgs.pinentry-qt;
         };
     };
 }
