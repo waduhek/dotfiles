@@ -13,13 +13,18 @@
         "usbhid"
         "sd_mod"
     ];
-    boot.initrd.kernelModules = [ ];
+    boot.initrd.kernelModules = [ "dm-snapshot" ];
     boot.kernelModules = [ "kvm-amd" ];
     boot.extraModulePackages = [ ];
 
     fileSystems = {
         "/" = {
-            device = "/dev/disk/by-label/NixOS";
+            device = "/dev/pool/NixOS";
+            fsType = "ext4";
+        };
+
+        "/home" = {
+            device = "/dev/pool/NixHome";
             fsType = "ext4";
         };
 
@@ -29,7 +34,7 @@
         };
 
         "/boot" = {
-            device = "/dev/disk/by-label/NixBoot";
+            device = "/dev/nvme0n1p6";
             fsType = "vfat";
             options = [ "fmask=0077" "dmask=0077" ];
         };
