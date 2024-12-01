@@ -109,6 +109,6 @@
         git
         librewolf
         xdg-utils
-        gnome.nautilus
+        nautilus
     ];
 }

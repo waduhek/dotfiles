@@ -7,12 +7,9 @@ in {
     };
 
     config = lib.mkIf cfg.enable {
-        # TODO: Update this setting to the new one with NixOS 24.11 arrives.
-        # Ref: https://wiki.nixos.org/wiki/Nvidia
-        hardware.opengl = {
+        hardware.graphics = {
             enable = true;
-            driSupport = true;
-            driSupport32Bit = true;
+            enable32Bit = true;
         };
 
         services.xserver.videoDrivers = [ "nvidia" ];
@@ -21,7 +18,7 @@ in {
             modesetting.enable = true;
             powerManagement.enable = true;
             powerManagement.finegrained = false;
-            open = false;
+            open = true;
             nvidiaSettings = true;
         };
     };
