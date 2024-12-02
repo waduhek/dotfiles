@@ -105,7 +105,6 @@
     # System-wide packages.
     environment.systemPackages = with pkgs; [
         wget
-        light
         git
         librewolf
         xdg-utils
