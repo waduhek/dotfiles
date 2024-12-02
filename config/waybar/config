@@ -31,11 +31,12 @@
     },
     "clock": {
         "format": "{:%Y-%m-%d %r}",
+        "locale": "en_IN.UTF-8",
         "interval": 1,
         "tooltip-format": "<tt>{calendar}</tt>",
         "calendar": {
             "mode": "year",
-            "mode-mon-col": 3,
+            "mode-mon-col": 2,
             "weeks-pos"     : "right",
             "on-scroll"     : 1,
             "on-click-right": "mode",
