@@ -6,9 +6,11 @@ on:
 
 permissions:
   pull-requests: write
+  contents: write
 
 env:
-  PR_BASE_BRANCH: nixos-setup
+  PR_BASE_BRANCH: main
+  PR_BRANCH: update-flake-lock
 
 jobs:
   update:
@@ -24,7 +26,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git switch -c update-flake-lock
+          git switch -c $PR_BRANCH
 
       - name: Update flake.lock
         run: nix flake update
@@ -35,5 +37,11 @@ jobs:
           && git diff --staged --quiet) \
           || git commit -m "chore(nix): update \`flake.lock\`"
 
+      - name: Push changes
+        run: git push -u origin $PR_BRANCH
+
       - name: Create PR
-        run: gh pr create --fill --base $PR_BASE_BRANCH
+        run: >
+          gh pr create --title "chore(nix): update \`flake.lock\`" --body "Update \`flake.lock\`" --base $PR_BASE_BRANCH
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
