@@ -6,6 +6,7 @@ on:
 
 permissions:
   pull-requests: write
+  contents: write
 
 env:
   PR_BASE_BRANCH: main
