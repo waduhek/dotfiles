@@ -42,6 +42,6 @@ jobs:
 
       - name: Create PR
         run: >
-          gh pr create --title "chore(nix): update `flake.lock`" --body "Update `flake.lock`" --base $PR_BASE_BRANCH
+          gh pr create --title "chore(nix): update \`flake.lock\`" --body "Update \`flake.lock\`" --base $PR_BASE_BRANCH
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
