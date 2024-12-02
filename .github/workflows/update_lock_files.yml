@@ -37,3 +37,5 @@ jobs:
 
       - name: Create PR
         run: gh pr create --fill --base $PR_BASE_BRANCH
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
