@@ -1,12 +1,6 @@
 { lib, pkgs, config, ... }:
 let
     cfg = config.sys.editor.neovim;
-
-    unstablePkgs = import (fetchGit {
-        url = "https://github.com/nixos/nixpkgs";
-        ref = "nixos-unstable";
-        rev = "76612b17c0ce71689921ca12d9ffdc9c23ce40b2";
-    }) { inherit (pkgs) system; };
 in {
     options = {
         sys.editor.neovim = {
@@ -53,7 +47,6 @@ in {
         programs.neovim = {
             enable = true;
             defaultEditor = cfg.defaultEditor;
-            package = unstablePkgs.neovim-unwrapped;
         };
 
         home.packages = with pkgs; [
