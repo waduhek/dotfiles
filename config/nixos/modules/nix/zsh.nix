@@ -43,6 +43,12 @@ in {
             defaultShell = lib.mkEnableOption "Make zsh the default shell";
             swayEnabled = lib.mkEnableOption "Indicates if Sway is enabled";
             usingNvidia = lib.mkEnableOption "Indicate if host is using Nvidia";
+            omzPlugins = lib.mkOption {
+                type = lib.types.listOf lib.types.str;
+                description = "List of OMZ plugins to use";
+                default = [ ];
+                example = [ "git" "gitfast" ];
+            };
         };
     };
 
@@ -62,7 +68,7 @@ in {
 
             ohMyZsh = {
                 enable = true;
-                plugins = [ "git" "gitfast" "vi-mode" ];
+                plugins = cfg.omzPlugins;
                 theme = "robbyrussell";
             };
         };
