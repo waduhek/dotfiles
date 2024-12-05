@@ -9,7 +9,7 @@
     home.username = "gaming";
     home.homeDirectory = "/home/gaming";
 
-    home.packages = with pkgs; [ steam discord ];
+    home.packages = with pkgs; [ steam webcord ];
 
     sys = {
         fonts.nerdfonts = {
