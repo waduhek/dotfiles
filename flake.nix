@@ -21,21 +21,6 @@
         lib = nixpkgs.lib;
     in {
         nixosConfigurations = {
-            testbox = lib.nixosSystem {
-                inherit system;
-
-                modules = [
-                    ./config/nixos/hosts/testbox/configuration.nix
-                    home-manager.nixosModules.home-manager {
-                        home-manager = {
-                            useGlobalPkgs = true;
-                            useUserPackages = true;
-                            users.ryan = import ./config/nixos/hosts/testbox/home.nix;
-                        };
-                    }
-                ];
-            };
-
             mercury = lib.nixosSystem {
                 inherit system;
                 modules = [
