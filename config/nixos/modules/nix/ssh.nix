@@ -9,6 +9,6 @@ in {
 
     config = lib.mkIf cfg.enable {
         services.openssh.enable = true;
-        programs.ssh.startAgent = true;
+        programs.ssh.startAgent = cfg.enableAgent;
     };
 }

@@ -85,15 +85,15 @@
             usingNvidia = true;
             omzPlugins = [ "git" "gitfast" "vi-mode" "docker" "kubectl" "wd" ];
         };
-        services.ssh.enable = true;
+        services.ssh = {
+            enable = true;
+            enableAgent = true;
+        };
         virtualisation = {
             docker.enable = true;
             kubernetes.enable = true;
         };
     };
-
-    # Enable GNOME Keyring for allowing applications to request passwords.
-    services.gnome.gnome-keyring.enable = true;
 
     # MIME type associations.
     xdg.mime.defaultApplications = {
