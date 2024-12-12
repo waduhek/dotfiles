@@ -37,6 +37,22 @@
                     }
                 ];
             };
+
+            venus = lib.nixosSystem {
+                inherit system;
+                modules = [
+                    ./config/nixos/hosts/venus/configuration.nix
+                    home-manager.nixosModules.home-manager {
+                        home-manager = {
+                            useGlobalPkgs = true;
+                            useUserPackages = true;
+                            users = {
+                                ryan = import ./config/nixos/hosts/venus/users/ryan.nix;
+                            };
+                        };
+                    }
+                ];
+            };
         };
     };
 }
