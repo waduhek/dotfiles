@@ -6,6 +6,7 @@
         ./gpg.nix
         ./libreoffice.nix
         ./neovim.nix
+        ./ssh.nix
         ./sway.nix
         ./tmux.nix
     ];

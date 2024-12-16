@@ -8,7 +8,7 @@ in {
     };
 
     config = lib.mkIf cfg.enable {
-        services.openssh.enable = true;
-        programs.ssh.startAgent = cfg.enableAgent;
+        programs.ssh.enable = true;
+        services.ssh-agent.enable = cfg.enableAgent;
     };
 }

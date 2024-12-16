@@ -52,6 +52,7 @@
             alacritty.enable = true;
             tmux.enable = true;
         };
+        services.ssh.enable = true;
         encryption.gpg = {
             enable = true;
             enableSshSupport = true;
