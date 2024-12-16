@@ -71,10 +71,7 @@
             defaultShell = true;
             omzPlugins = [ "git" "gitfast" "vi-mode" "wd" ];
         };
-        services.ssh = {
-            enable = true;
-            enableAgent = true;
-        };
+        services.ssh.enable = true;
     };
 
     # MIME type associations.
