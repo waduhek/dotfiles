@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
     imports = [
         ../../../modules/home
@@ -12,6 +12,10 @@
     programs.home-manager.enable = true;
 
     home.packages = with pkgs; [ steam webcord ];
+
+    home.file.".profile".text = ''
+        . "${config.home.profileDirectory}/etc/profile.d/hm-session-vars.sh"
+    '';
 
     programs.git = {
         enable = true;
@@ -48,6 +52,14 @@
             alacritty.enable = true;
             tmux.enable = true;
         };
-        encryption.gpg.enable = true;
+        encryption.gpg = {
+            enable = true;
+            enableSshSupport = true;
+            sshKeys = [ "0D47736C1BD42CF5C821483D6AC6A336578B0964" ];
+        };
+        editor.neovim = {
+            enable = true;
+            defaultEditor = true;
+        };
     };
 }
