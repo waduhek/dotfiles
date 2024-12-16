@@ -176,6 +176,7 @@ in {
             python.enable = true;
         };
         productivity.libreoffice.enable = true;
+        services.ssh.enable = true;
         encryption.gpg = {
             enable = true;
             enableSshSupport = true;

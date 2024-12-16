@@ -85,10 +85,6 @@
             usingNvidia = true;
             omzPlugins = [ "git" "gitfast" "vi-mode" "docker" "kubectl" "wd" ];
         };
-        services.ssh = {
-            enable = true;
-            enableAgent = true;
-        };
         virtualisation = {
             docker.enable = true;
             kubernetes.enable = true;
