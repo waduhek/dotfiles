@@ -20,5 +20,6 @@
             alacritty.enable = true;
             tmux.enable = true;
         };
+        messengers.signal.enable = true;
     };
 }
