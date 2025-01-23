@@ -3,6 +3,7 @@
         ./languages
         ./alacritty.nix
         ./fonts.nix
+        ./gnumake.nix
         ./gpg.nix
         ./libreoffice.nix
         ./neovim.nix
