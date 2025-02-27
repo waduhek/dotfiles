@@ -1,4 +1,4 @@
-{ lib, pkgs, config, ... }:
+{ lib, config, ... }:
 let
     cfg = config.sys.services.ssh;
 in {
