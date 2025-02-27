@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 let
     swayPCConfig = ''
         set $primary_display 'BNQ BenQ EX2510 5CL01826019'

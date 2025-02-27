@@ -1,8 +1,6 @@
 { lib, pkgs, config, ... }:
 let
     cfg = config.sys.encryption.gpg;
-
-    gpgPkg = config.programs.gpg.package;
 in {
     options = {
         sys.encryption.gpg = {
