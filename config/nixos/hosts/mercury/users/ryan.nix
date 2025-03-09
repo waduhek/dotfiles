@@ -174,6 +174,7 @@ in {
             rust.enable = true;
             go.enable = true;
             python.enable = true;
+            protobuf.enable = true;
         };
         productivity.libreoffice.enable = true;
         services.ssh.enable = true;
