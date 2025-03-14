@@ -78,18 +78,16 @@
             sway.enable = true;
             plasma.enable = true;
         };
-        shell.zsh = {
-            enable = true;
-            defaultShell = true;
-            swayEnabled = true;
-            usingNvidia = true;
-            omzPlugins = [ "git" "gitfast" "vi-mode" "docker" "kubectl" "wd" ];
-        };
         virtualisation = {
             docker.enable = true;
             kubernetes.enable = true;
         };
     };
+
+    # Set the default shell to ZSH. Configuration is managed by the home manager
+    # module.
+    programs.zsh.enable = true;
+    users.defaultUserShell = pkgs.zsh;
 
     # MIME type associations.
     xdg.mime.defaultApplications = {

@@ -7,6 +7,5 @@
         ./nvidia.nix
         ./plasma.nix
         ./sway.nix
-        ./zsh.nix
     ];
 }

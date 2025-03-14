@@ -153,6 +153,10 @@ in {
 
     # Config options set by modules.
     sys = {
+        shell.zsh = {
+            enable = true;
+            omzPlugins = [ "git" "gitfast" "vi-mode" "docker" "kubectl" "wd" ];
+        };
         terminal = {
             alacritty.enable = true;
             tmux.enable = true;
@@ -161,6 +165,7 @@ in {
             enable = true;
             pcConfig = swayPCConfig;
         };
+        scripts.startSwayNvidia.enable = true;
         fonts.nerdfonts = {
             enable = true;
             installFonts = [ "Hack" ];

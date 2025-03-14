@@ -1,6 +1,7 @@
 {
     imports = [
         ./languages
+        ./scripts
         ./alacritty.nix
         ./fonts.nix
         ./gnumake.nix
@@ -11,5 +12,6 @@
         ./ssh.nix
         ./sway.nix
         ./tmux.nix
+        ./zsh.nix
     ];
 }
