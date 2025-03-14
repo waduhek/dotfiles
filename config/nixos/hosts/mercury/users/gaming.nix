@@ -12,6 +12,7 @@
     home.packages = with pkgs; [ steam webcord ];
 
     sys = {
+        shell.zsh.enable = true;
         fonts.nerdfonts = {
             enable = true;
             installFonts = [ "Hack" ];
