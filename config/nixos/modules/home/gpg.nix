@@ -23,7 +23,7 @@ in {
             defaultCacheTtl = 3600;
             defaultCacheTtlSsh = 3600;
             enableSshSupport = cfg.enableSshSupport;
-            pinentryPackage = pkgs.pinentry-tty;
+            pinentryPackage = pkgs.pinentry-qt;
             sshKeys = cfg.sshKeys;
         };
     };
