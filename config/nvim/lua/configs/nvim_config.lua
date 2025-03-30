@@ -1,5 +1,5 @@
 -- Completion config.
-vim.o.completeopt = "menu,menuone,noselect"
+vim.opt.completeopt = { "menuone", "noinsert", "noselect", "popup", "fuzzy" }
 
 -- Use spaces for indentation
 vim.opt.expandtab = true
