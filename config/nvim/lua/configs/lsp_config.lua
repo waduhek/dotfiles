@@ -1,6 +1,4 @@
 local lspconfig = require("lspconfig")
-local luasnip = require("luasnip")
-local cmp = require("cmp")
 
 vim.cmd [[autocmd! ColorScheme * highlight NormalFloat guibg=#1f2335]]
 vim.cmd [[autocmd! ColorScheme * highlight FloatBorder guifg=white guibg=#1f2335]]
@@ -38,8 +36,6 @@ local on_attach = function(client, bufnr)
     )
 end
 
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
 -- Add required servers here.
 local servers = require("constants.lsp_servers").get_lsp_servers()
 for _, lsp in ipairs(servers) do
@@ -49,45 +45,79 @@ for _, lsp in ipairs(servers) do
     if lsp_settings ~= nil then
         lspconfig[lsp_name].setup {
             on_attach = on_attach,
-            capabilities = capabilities,
             settings = lsp_settings,
         }
     else
         lspconfig[lsp_name].setup {
             on_attach = on_attach,
-            capabilities = capabilities,
         }
     end
 end
 
--- nvim-cmp setup
-cmp.setup {
-    preselect = cmp.PreselectMode.None,
-    snippet = {
-        expand = function(args)
-            luasnip.lsp_expand(args.body)
-        end,
-    },
-    mapping = cmp.mapping.preset.insert({
-        ["<C-d>"] = cmp.mapping.scroll_docs(-4),
-        ["<C-f>"] = cmp.mapping.scroll_docs(4),
-        ["<C-Space>"] = cmp.mapping.complete(),
-        ["<CR>"] = cmp.mapping.confirm {
-            behavior = cmp.ConfirmBehavior.Replace,
-            select = false,
-        },
-        ["<Tab>"] = cmp.mapping.confirm {
-            behavior = cmp.ConfirmBehavior.Replace,
-            select = false,
-        },
-    }),
-    sources = cmp.config.sources({
-        { name = "nvim_lsp" },
-        { name = "luasnip" },
-    }, {
-        { name = "buffer" }
-    }),
-}
+vim.api.nvim_create_autocmd("LspAttach", {
+    callback = function (args)
+        -- Enable autocompletion and trigger it on each keypress.
+        local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
+        client.server_capabilities.completionProvider.triggerCharacters =
+            vim.split("qwertyuiopasdfghjklzxcvbnm. ", "")
+
+        vim.api.nvim_create_autocmd("TextChangedI", {
+            buffer = args.buf,
+            callback = function ()
+                vim.lsp.completion.get()
+            end
+        })
+
+        vim.lsp.completion.enable(
+            true,
+            client.id,
+            args.buf,
+            { autotrigger = true }
+        )
+
+        -- Show documentation for the currently selected item.
+        local _, cancel_prev = nil, function () end
+
+        vim.api.nvim_create_autocmd("CompleteChanged", {
+            buffer = args.buf,
+            callback = function ()
+                cancel_prev()
+
+                local info = vim.fn.complete_info({ "selected" })
+
+                local completion_item = vim.tbl_get(
+                    vim.v.completed_item,
+                    "user_data",
+                    "nvim",
+                    "lsp",
+                    "completion_item"
+                )
+                if completion_item == nil then
+                    return
+                end
+
+                _, cancel_prev = vim.lsp.buf_request(
+                    args.buf,
+                    vim.lsp.protocol.Methods.completionItem_resolve,
+                    completion_item,
+                    function (err, item, ctx)
+                        if not item then
+                            return
+                        end
+
+                        local docs = (item.documentation or {}).value
+                        local win = vim.api.nvim__complete_set(info.selected, { info = docs })
+
+                        if win.winid and vim.api.nvim_win_is_valid(win.winid) then
+                            vim.treesitter.start(win.bufnr, "markdown")
+                            vim.wo[win.winid].conceallevel = 3
+                        end
+                    end
+                )
+            end
+        })
+    end
+})
 
 -- Show diagnostic information on the current line.
 vim.diagnostic.config({ virtual_lines = { only_current_line = true } })
