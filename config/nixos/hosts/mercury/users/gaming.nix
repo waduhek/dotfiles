@@ -22,5 +22,6 @@
             tmux.enable = true;
         };
         messengers.signal.enable = true;
+        encryption.gpg.enable = true;
     };
 }
