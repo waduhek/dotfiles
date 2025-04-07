@@ -30,9 +30,6 @@ return require("lazy").setup({
 
             -- Snippets plugin
             "L3MON4D3/LuaSnip",
-
-            -- Signature help source
-            "hrsh7th/cmp-nvim-lsp-signature-help",
         },
     },
 
