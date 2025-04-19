@@ -66,11 +66,6 @@
         gpu.intel.enable = true;
         audio.pipewire.enable = true;
         desktop.plasma.enable = true;
-        shell.zsh = {
-            enable = true;
-            defaultShell = true;
-            omzPlugins = [ "git" "gitfast" "vi-mode" "wd" ];
-        };
     };
 
     # MIME type associations.
