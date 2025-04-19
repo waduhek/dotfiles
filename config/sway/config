@@ -251,8 +251,8 @@ bar {
 #
 # Font configuration
 #
-# Set the font to Hack Nerd font globally
-font "Hack Nerd Font Mono" 10
+# Set the font to FiraMono Nerd font globally
+font "FiraMono Nerd Font Mono" 10
 
 # Device specific config goes here.
 include ./pc_config.conf

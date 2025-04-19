@@ -10,19 +10,19 @@ cursor = "CellForeground"
 size = 11
 
 [font.normal]
-family = "Hack Nerd Font Mono"
+family = "FiraMono Nerd Font"
 style = "Regular"
 
 [font.bold]
-family = "Hack Nerd Font Mono"
+family = "FiraMono Nerd Font"
 style = "Bold"
 
 [font.italic]
-family = "Hack Nerd Font Mono"
+family = "FiraMono Nerd Font"
 style = "Italic"
 
 [font.bold_italic]
-family = "Hack Nerd Font Mono"
+family = "FiraMono Nerd Font"
 style = "Bold Italic"
 
 [mouse]
