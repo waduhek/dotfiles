@@ -21,8 +21,8 @@
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
-            "activated": "",
-            "deactivated": ""
+            "activated": " ",
+            "deactivated": " "
         }
     },
     "tray": {
@@ -50,11 +50,11 @@
         }
     },
     "cpu": {
-        "format": "{usage}% ",
+        "format": "{usage}%  ",
         "interval": 1
     },
     "memory": {
-        "format": "{used}G ",
+        "format": "{used}G  ",
         "interval": 1
     },
     "temperature": {
@@ -69,7 +69,7 @@
         // "device": "acpi_video1",
         "format": "{percent}% {icon}",
         "states": [0,50],
-        "format-icons": ["", ""]
+        "format-icons": [" ", " "]
     },
     "battery": {
         "interval": 5,
@@ -81,16 +81,16 @@
         "format": "{capacity}% {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": [" ", " ", " ", " ", " "]
     },
     "battery#bat2": {
         "bat": "BAT2"
     },
     "network": {
         // "interface": "wlp2s0", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
-        "format-disconnected": "Disconnected ⚠",
+        "format-wifi": "{essid} ({signalStrength}%)  ",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr}  ",
+        "format-disconnected": "Disconnected ⚠ ",
         "interval" : 7
     },
     "pulseaudio": {
@@ -99,13 +99,13 @@
         "format-bluetooth": "{volume}% {icon}",
         "format-muted": "",
         "format-icons": {
-            "headphones": "",
+            "headphones": " ",
             "handsfree": "",
             "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", ""]
+            "phone": " ",
+            "portable": " ",
+            "car": " ",
+            "default": [" ", " "]
         },
         "on-click": "pavucontrol"
     },
@@ -114,8 +114,8 @@
         "return-type": "json",
         "max-length": 40,
         "format-icons": {
-            "spotify": "",
-            "default": "🎜"
+            "spotify": " ",
+            "default": "🎜 "
         },
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder

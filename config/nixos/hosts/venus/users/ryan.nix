@@ -50,7 +50,7 @@
         };
         fonts.nerdfonts = {
             enable = true;
-            installFonts = [ "Hack" ];
+            installFonts = [ "FiraMono" ];
         };
         terminal = {
             alacritty.enable = true;

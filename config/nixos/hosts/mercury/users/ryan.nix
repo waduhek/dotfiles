@@ -168,7 +168,7 @@ in {
         scripts.startSwayNvidia.enable = true;
         fonts.nerdfonts = {
             enable = true;
-            installFonts = [ "Hack" ];
+            installFonts = [ "FiraMono" ];
         };
         editor.neovim = {
             enable = true;
