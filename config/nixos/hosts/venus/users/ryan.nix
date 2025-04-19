@@ -44,6 +44,10 @@
     };
 
     sys = {
+        shell.zsh = {
+            enable = true;
+            omzPlugins = [ "git" "gitfast" "vi-mode" "docker" "kubectl" "wd" ];
+        };
         fonts.nerdfonts = {
             enable = true;
             installFonts = [ "Hack" ];
