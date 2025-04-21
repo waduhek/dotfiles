@@ -28,7 +28,6 @@ let
         # Change the mouse sensitivity
         input 1133:49291:Logitech_G502_HERO_Gaming_Mouse {
             accel_profile flat
-            pointer_accel -0.9
         }
 
         #
