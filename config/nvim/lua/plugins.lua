@@ -101,4 +101,11 @@ return require("lazy").setup({
             require("fidget").setup()
         end
     },
+
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        config = function ()
+            require("ibl").setup({ scope = { enabled = false } })
+        end
+    },
 })
