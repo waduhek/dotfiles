@@ -68,6 +68,11 @@
         desktop.plasma.enable = true;
     };
 
+    # Set the default shell to ZSH. Configuration is managed by the home manager
+    # module.
+    programs.zsh.enable = true;
+    users.defaultUserShell = pkgs.zsh;
+
     # MIME type associations.
     xdg.mime.defaultApplications = {
         "application/pdf" = "librewolf.desktop";
