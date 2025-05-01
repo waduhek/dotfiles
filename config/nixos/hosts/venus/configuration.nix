@@ -87,5 +87,6 @@
         git
         librewolf
         xdg-utils
+        wl-clipboard
     ];
 }
