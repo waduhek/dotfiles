@@ -1,5 +1,39 @@
 { config, pkgs, ... }:
-{
+let
+    nvimLspConstants = ''
+        local P = {}
+
+        function P.get_lsp_servers()
+            return {
+                { name = "gopls" },
+                {
+                    name = "lua_ls",
+                    settings = {
+                        Lua = {
+                            runtime = {
+                                version = "LuaJIT",
+                            },
+                            diagnostics = {
+                                globals = { "vim" },
+                            },
+                            workspace = {
+                                library = vim.api.nvim_get_runtime_file("", true),
+                                checkThirdParty = false,
+                            },
+                            telemetry = {
+                                enable = false,
+                            },
+                        },
+                    },
+                },
+                { name = "nixd" },
+            }
+        end
+
+        return P
+    '';
+
+in {
     imports = [
         ../../../modules/home
     ];
@@ -65,6 +99,8 @@
         editor.neovim = {
             enable = true;
             defaultEditor = true;
+            lspConfig = nvimLspConstants;
         };
+        language.go.enable = true;
     };
 }
