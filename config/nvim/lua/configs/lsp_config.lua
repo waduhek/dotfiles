@@ -74,22 +74,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
             )
         end
 
-        -- vim.api.nvim_create_autocmd("TextChangedI", {
-        --     buffer = args.buf,
-        --     callback = function ()
-        --         vim.lsp.completion.get()
-        --     end
-        -- })
-
-        -- Show documentation for the currently selected item.
-        local _, cancel_prev = nil, function () end
-
         vim.api.nvim_create_autocmd("CompleteChanged", {
             buffer = args.buf,
             callback = function ()
-                cancel_prev()
-
-                local info = vim.fn.complete_info({ "selected" })
+                -- local info = vim.fn.complete_info({ "selected" })
 
                 local completion_item = vim.tbl_get(
                     vim.v.completed_item,
@@ -102,24 +90,24 @@ vim.api.nvim_create_autocmd("LspAttach", {
                     return
                 end
 
-                _, cancel_prev = vim.lsp.buf_request(
-                    args.buf,
-                    vim.lsp.protocol.Methods.completionItem_resolve,
-                    completion_item,
-                    function (err, item, ctx)
-                        if not item then
-                            return
-                        end
-
-                        local docs = (item.documentation or {}).value
-                        local win = vim.api.nvim__complete_set(info.selected, { info = docs })
-
-                        if win.winid and vim.api.nvim_win_is_valid(win.winid) then
-                            vim.treesitter.start(win.bufnr, "markdown")
-                            vim.wo[win.winid].conceallevel = 3
-                        end
-                    end
-                )
+                -- vim.lsp.buf_request_all(
+                --     args.buf,
+                --     vim.lsp.protocol.Methods.completionItem_resolve,
+                --     completion_item,
+                --     function (err, item, ctx)
+                --         if not item then
+                --             return
+                --         end
+                --
+                --         local docs = (item.documentation or {}).value
+                --         local win = vim.api.nvim__complete_set(info.selected, { info = docs })
+                --
+                --         if win.winid and vim.api.nvim_win_is_valid(win.winid) then
+                --             vim.treesitter.start(win.bufnr, "markdown")
+                --             vim.wo[win.winid].conceallevel = 3
+                --         end
+                --     end
+                -- )
             end
         })
     end
