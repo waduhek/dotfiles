@@ -21,3 +21,9 @@ vim.keymap.set("n", "<leader>G", vim.cmd.Git)
 vim.keymap.set("n", "<leader>ga", "<Cmd>diffget //2<CR>")
 -- Select the the right buffer in diff mode (only works for vim-fugitive diffs)
 vim.keymap.set("n", "<leader>gd", "<Cmd>diffget //3<CR>")
+
+-- =================== LSP maps ===================
+-- Manually trigger LSP completion
+vim.keymap.set("i", "<C-Space>", function ()
+    vim.lsp.completion.get()
+end)

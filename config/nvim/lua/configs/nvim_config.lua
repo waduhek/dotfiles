@@ -1,5 +1,5 @@
 -- Completion config.
-vim.o.completeopt = "menu,menuone,noselect"
+vim.opt.completeopt = { "menuone", "noinsert", "noselect", "popup", "fuzzy" }
 
 -- Use spaces for indentation
 vim.opt.expandtab = true
@@ -35,3 +35,10 @@ vim.opt.showtabline = 0
 
 -- Show the current branch using Fugitive plugin.
 vim.opt.statusline = "%<%f %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%) %P"
+
+-- Enable virtual lines in the buffer.
+vim.diagnostic.config({
+    virtual_lines = {
+        current_line = true,
+    },
+})

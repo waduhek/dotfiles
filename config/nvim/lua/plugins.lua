@@ -15,24 +15,6 @@ return require("lazy").setup({
     -- LSP configuration
     "neovim/nvim-lspconfig",
 
-    -- Autocompletion plugin
-    {
-        "hrsh7th/nvim-cmp",
-        event = "InsertEnter",
-        dependencies = {
-            -- LSP source for nvim-cmp
-            "hrsh7th/cmp-nvim-lsp",
-
-            "hrsh7th/cmp-buffer",
-
-            -- Snippets source for nvim-cmp
-            "saadparwaiz1/cmp_luasnip",
-
-            -- Snippets plugin
-            "L3MON4D3/LuaSnip",
-        },
-    },
-
     -- Catppuccin theme
     {
         "catppuccin/nvim",
@@ -106,13 +88,6 @@ return require("lazy").setup({
         "lukas-reineke/indent-blankline.nvim",
         config = function ()
             require("ibl").setup({ scope = { enabled = false } })
-        end
-    },
-
-    {
-        url = "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-        config = function ()
-            require("lsp_lines").setup()
         end
     },
 })
