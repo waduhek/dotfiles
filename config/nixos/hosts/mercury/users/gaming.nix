@@ -9,7 +9,7 @@
     home.username = "gaming";
     home.homeDirectory = "/home/gaming";
 
-    home.packages = with pkgs; [ steam webcord ];
+    home.packages = with pkgs; [ steam ];
 
     sys = {
         shell.zsh.enable = true;
