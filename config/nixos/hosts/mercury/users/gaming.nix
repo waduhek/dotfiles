@@ -13,10 +13,7 @@
 
     sys = {
         shell.zsh.enable = true;
-        fonts.nerdfonts = {
-            enable = true;
-            installFonts = [ "FiraMono" ];
-        };
+        fonts.nerdfonts.enable = true;
         terminal = {
             alacritty.enable = true;
             tmux.enable = true;

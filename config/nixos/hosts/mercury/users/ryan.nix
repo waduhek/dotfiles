@@ -165,10 +165,7 @@ in {
             pcConfig = swayPCConfig;
         };
         scripts.startSwayNvidia.enable = true;
-        fonts.nerdfonts = {
-            enable = true;
-            installFonts = [ "FiraMono" ];
-        };
+        fonts.nerdfonts.enable = true;
         editor.neovim = {
             enable = true;
             defaultEditor = true;

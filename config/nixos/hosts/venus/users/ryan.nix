@@ -82,10 +82,7 @@ in {
             enable = true;
             omzPlugins = [ "git" "gitfast" "vi-mode" "docker" "kubectl" "wd" ];
         };
-        fonts.nerdfonts = {
-            enable = true;
-            installFonts = [ "FiraMono" ];
-        };
+        fonts.nerdfonts.enable = true;
         terminal = {
             alacritty.enable = true;
             tmux.enable = true;
