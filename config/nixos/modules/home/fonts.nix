@@ -5,19 +5,13 @@ in {
     options = {
         sys.fonts.nerdfonts = {
             enable = lib.mkEnableOption "Enable Nerdfonts";
-            installFonts = lib.mkOption {
-                type = lib.types.listOf lib.types.str;
-                description = "List of nerdfonts to install";
-                default = [];
-                example = [ "Hack" ];
-            };
         };
     };
 
     config = lib.mkIf cfg.enable {
         fonts.fontconfig.enable = true;
-        home.packages = [
-            (pkgs.nerdfonts.override { fonts = cfg.installFonts; })
+        home.packages = with pkgs; [
+            nerd-fonts.fira-mono
         ];
     };
 }
