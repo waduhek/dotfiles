@@ -90,7 +90,7 @@ cmp.setup {
 }
 
 -- Show diagnostic information on the current line.
-vim.diagnostic.config({ virtual_lines = { only_current_line = true } })
+vim.diagnostic.config({ virtual_lines = { current_line = true } })
 
 local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
 function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
