@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
     imports = [
@@ -105,4 +105,7 @@
         xdg-utils
         nautilus
     ];
+
+    # https://wiki.archlinux.org/title/Lm_sensors#MAG_B650_TOMAHAWK_WIFI_(MS-7D75)/MAG_B550_MORTAR_WIFI_(MS-7C94)
+    boot.extraModulePackages = with config.boot.kernelPackages; [ nct6687d ];
 }
