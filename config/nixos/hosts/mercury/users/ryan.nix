@@ -6,6 +6,8 @@ let
 
         bindsym $mod+m output $secondary_display toggle
 
+        bindsym $mod+y exec $term -e yazi
+
         #
         # ==== Outputs ===
         #
@@ -166,6 +168,7 @@ in {
         };
         scripts.startSwayNvidia.enable = true;
         fonts.nerdfonts.enable = true;
+        fileManagers.yazi.enable = true;
         editor.neovim = {
             enable = true;
             defaultEditor = true;
