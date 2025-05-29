@@ -12,6 +12,7 @@
         ./ssh.nix
         ./sway.nix
         ./tmux.nix
+        ./yazi.nix
         ./zsh.nix
     ];
 }
