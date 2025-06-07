@@ -1,4 +1,3 @@
-local lspconfig = require("lspconfig")
 local luasnip = require("luasnip")
 local cmp = require("cmp")
 
@@ -46,18 +45,18 @@ for _, lsp in ipairs(servers) do
     local lsp_name = lsp.name
     local lsp_settings = lsp.settings
 
+    vim.lsp.config(lsp_name, {
+        capabilities = capabilities,
+        on_attach = on_attach,
+    })
+
     if lsp_settings ~= nil then
-        lspconfig[lsp_name].setup {
-            on_attach = on_attach,
-            capabilities = capabilities,
+        vim.lsp.config(lsp_name, {
             settings = lsp_settings,
-        }
-    else
-        lspconfig[lsp_name].setup {
-            on_attach = on_attach,
-            capabilities = capabilities,
-        }
+        })
     end
+
+    vim.lsp.enable(lsp_name)
 end
 
 -- nvim-cmp setup
