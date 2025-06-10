@@ -1,4 +1,4 @@
-{ lib, config, ... }:
+{ lib, config, pkgs, ... }:
 let
     cfg = config.sys.language.go;
 in {
@@ -8,5 +8,8 @@ in {
 
     config = lib.mkIf cfg.enable {
         programs.go.enable = true;
+        home.packages = with pkgs; [
+            delve
+        ];
     };
 }
