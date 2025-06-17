@@ -8,6 +8,7 @@
         ./gpg.nix
         ./libreoffice.nix
         ./neovim.nix
+        ./ollama.nix
         ./qbittorrent.nix
         ./signal.nix
         ./ssh.nix

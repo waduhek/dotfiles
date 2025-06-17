@@ -188,5 +188,6 @@ in {
             sshKeys = [ "0D47736C1BD42CF5C821483D6AC6A336578B0964" ];
         };
         buildTools.gnumake.enable = true;
+        ai.ollama.enable = true;
     };
 }
