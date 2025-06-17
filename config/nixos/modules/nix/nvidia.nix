@@ -21,5 +21,8 @@ in {
             open = true;
             nvidiaSettings = true;
         };
+
+        # Enables CUDA support
+        nixpkgs.config.cudaSupport = true;
     };
 }
