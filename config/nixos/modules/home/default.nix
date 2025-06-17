@@ -8,10 +8,12 @@
         ./gpg.nix
         ./libreoffice.nix
         ./neovim.nix
+        ./qbittorrent.nix
         ./signal.nix
         ./ssh.nix
         ./sway.nix
         ./tmux.nix
+        ./vlc.nix
         ./yazi.nix
         ./zsh.nix
     ];
