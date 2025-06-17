@@ -20,5 +20,7 @@
         };
         messengers.signal.enable = true;
         encryption.gpg.enable = true;
+        media.vlc.enable = true;
+        torrent.qbittorrent.enable = true;
     };
 }
