@@ -189,5 +189,6 @@ in {
         };
         buildTools.gnumake.enable = true;
         ai.ollama.enable = true;
+        cloud.awscli.enable = true;
     };
 }
