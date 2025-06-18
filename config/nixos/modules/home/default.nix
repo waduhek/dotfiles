@@ -1,5 +1,6 @@
 {
     imports = [
+        ./cloud
         ./languages
         ./scripts
         ./alacritty.nix
