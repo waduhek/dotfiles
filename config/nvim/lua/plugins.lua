@@ -10,7 +10,12 @@ return require("lazy").setup({
         end
     },
 
-    "nvim-treesitter/nvim-treesitter-context",
+    {
+        "nvim-treesitter/nvim-treesitter-context",
+        config = function()
+            require("treesitter-context").setup()
+        end
+    },
 
     -- LSP configuration
     "neovim/nvim-lspconfig",
