@@ -5,9 +5,9 @@ return require("lazy").setup({
     -- Tree-sitter for parsing language and providing syntax highlighting
     {
         "nvim-treesitter/nvim-treesitter",
-        build = function()
-            require("nvim-treesitter.install").update({ with_sync = true })
-        end
+        lazy = false,
+        branch = "main",
+        build = ":TSUpdate",
     },
 
     {
