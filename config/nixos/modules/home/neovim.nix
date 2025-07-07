@@ -50,6 +50,7 @@ in {
         };
 
         home.packages = with pkgs; [
+            tree-sitter
             clang # Required for Treesitter.
 
             # LSP servers

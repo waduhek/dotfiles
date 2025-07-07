@@ -1,30 +1,25 @@
-require("nvim-treesitter.configs").setup {
-    -- Ensure all parsers are available
-    ensure_install = { "all" },
+local treesitter = require("nvim-treesitter")
 
-    -- Install parsers synchronously
-    sync_install = true,
-
-    -- Automatically install parsers
-    auto_install = true,
-
-    highlight = {
-        -- Enable highlighting
-        enable = true,
-    },
-
-    incremental_selection = {
-        -- Enable incremental selection and set some maps
-        enable = true,
-        keymaps = {
-            init_selection = "gnn",
-            node_incremental = "grn",
-            scope_incremental = "grc",
-            node_decremental = "grm",
-        },
-    },
+local filetypes = {
+    "go", "gomod", "gosum", "rust", "lua", "nix", "sql", "nginx", "proto",
+    "java", "kotlin", "groovy",
+    "html", "css", "javascript", "typescript",
+    "gitcommit", "gitrebase", "gitignore", "diff",
+    "python", "sh", "bash",
+    "dockerfile",
+    "markdown", "markdown_inline",
+    "xml", "yaml", "toml",
+    "json", "csv", "tsv",
+    "vim", "vimdoc",
+    "template",
 }
 
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-vim.opt.foldlevel = 99
+treesitter.install(filetypes)
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = filetypes,
+    callback = function()
+        vim.treesitter.start()
+        vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+    end
+})
