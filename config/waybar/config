@@ -5,16 +5,19 @@
     "height": 20, // Waybar height
     // "width": 120, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
+    "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": [],
-    "modules-right": ["tray","pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "battery", "battery#bat2", "clock"],
+    "modules-right": [
+        "tray", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory",
+        "temperature", "backlight", "battery", "battery#bat2", "clock"
+    ],
     // Modules configuration
     "sway/workspaces": {
         "disable-scroll": true,
         "disable-markup" : false,
         "all-outputs": true,
         // "format": "  {icon}  ",
-        "format":"{icon}",
+        "format":"{icon}"
     },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
@@ -89,6 +92,7 @@
     },
     "network": {
         // "interface": "wlp2s0", // (Optional) To force the use of this interface
+        "format": "{ifname}: {ipaddr}/{cidr}",
         "format-wifi": "{essid} ({signalStrength}%)  ",
         "format-ethernet": "{ifname}: {ipaddr}/{cidr}  ",
         "format-disconnected": "Disconnected ⚠ ",
@@ -109,16 +113,5 @@
             "default": [" ", " "]
         },
         "on-click": "pavucontrol"
-    },
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": " ",
-            "default": "🎜 "
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
     }
 }
