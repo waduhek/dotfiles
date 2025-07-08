@@ -68,10 +68,18 @@ return require("lazy").setup({
         tag = "0.1.8",
         dependencies = {
             "nvim-lua/plenary.nvim",
-            "nvim-telescope/telescope-live-grep-args.nvim",
         },
+        -- HACK: This is done to prevent the breaking changes from
+        -- nvim-treesitter from causing errors in the preview. Remove this when
+        -- telescope supports the re-written version of nvim-treesitter.
         config = function()
-            require("telescope").load_extension("live_grep_args")
+            require("telescope").setup({
+                defaults = {
+                    preview = {
+                        treesitter = false,
+                    },
+                },
+            })
         end
     },
 
