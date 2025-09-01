@@ -101,7 +101,7 @@
     environment.systemPackages = with pkgs; [
         wget
         git
-        librewolf
+        librewolf-bin
         xdg-utils
     ];
 
