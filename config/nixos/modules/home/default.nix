@@ -11,6 +11,7 @@
         ./libreoffice.nix
         ./neovim.nix
         ./ollama.nix
+        ./piper.nix
         ./qbittorrent.nix
         ./signal.nix
         ./ssh.nix

@@ -22,5 +22,6 @@
         encryption.gpg.enable = true;
         media.vlc.enable = true;
         torrent.qbittorrent.enable = true;
+        peripherals.piper.enable = true;
     };
 }

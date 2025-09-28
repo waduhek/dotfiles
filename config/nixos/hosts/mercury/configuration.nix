@@ -82,6 +82,7 @@
             docker.enable = true;
             kubernetes.enable = true;
         };
+        peripherals.libratbag.enable = true;
     };
 
     # Set the default shell to ZSH. Configuration is managed by the home manager
