@@ -1,6 +1,7 @@
 {
     imports = [
         ./audio.nix
+        ./bluetooth.nix
         ./docker.nix
         ./intel.nix
         ./kubernetes.nix

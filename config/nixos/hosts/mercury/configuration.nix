@@ -83,6 +83,10 @@
             kubernetes.enable = true;
         };
         peripherals.libratbag.enable = true;
+        wireless.bluetooth = {
+            enable = true;
+            powerOnBoot = false;
+        };
     };
 
     # Set the default shell to ZSH. Configuration is managed by the home manager
