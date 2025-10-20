@@ -11,6 +11,7 @@ local filetypes = {
     "xml", "yaml", "toml",
     "json", "csv", "tsv",
     "vim", "vimdoc",
+    "tmux",
 }
 
 treesitter.install(filetypes)
