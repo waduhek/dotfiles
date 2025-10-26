@@ -20,7 +20,7 @@ let
 
         output $secondary_display {
             mode 1920x1080@74.973Hz
-            position 1920 0
+            position -1920 0
         }
 
         #
