@@ -4,7 +4,7 @@ local filetypes = {
     "go", "gomod", "gosum", "rust", "lua", "nix", "sql", "nginx", "proto",
     "java", "kotlin", "groovy",
     "html", "css", "javascript", "typescript",
-    "gitcommit", "gitrebase", "gitignore", "diff",
+    "git_config", "gitcommit", "git_rebase", "gitignore", "gitattributes", "diff",
     "python", "sh", "bash",
     "dockerfile",
     "markdown", "markdown_inline",
