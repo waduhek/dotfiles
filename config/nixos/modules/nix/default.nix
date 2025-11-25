@@ -9,5 +9,6 @@
         ./nvidia.nix
         ./plasma.nix
         ./sway.nix
+        ./virtcam.nix
     ];
 }

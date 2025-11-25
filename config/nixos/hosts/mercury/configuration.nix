@@ -82,7 +82,10 @@
             docker.enable = true;
             kubernetes.enable = true;
         };
-        peripherals.libratbag.enable = true;
+        peripherals = {
+            libratbag.enable = true;
+            virtcam.enable = true;
+        };
         wireless.bluetooth = {
             enable = true;
             powerOnBoot = false;
