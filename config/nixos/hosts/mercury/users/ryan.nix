@@ -128,13 +128,12 @@ in {
 
     programs.git = {
         enable = true;
-        userName = "Ryan Noronha";
-        userEmail = "ryannor56a@proton.me";
-        signing = {
-            signByDefault = true;
-            key = "1CEABC4E67177BB7!";
-        };
-        extraConfig = {
+        settings = {
+            user = {
+                name = "Ryan Noronha";
+                email = "ryannor56a@proton.me";
+            };
+
             core.editor = "nvim";
 
             init.defaultBranch = "main";
@@ -149,6 +148,10 @@ in {
                 branch = false;
                 stash = false;
             };
+        };
+        signing = {
+            signByDefault = true;
+            key = "1CEABC4E67177BB7!";
         };
     };
 
