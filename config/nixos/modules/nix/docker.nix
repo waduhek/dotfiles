@@ -10,6 +10,11 @@ in {
         virtualisation.docker = {
             enable = true;
             extraPackages = with pkgs; [ docker-compose ];
+            daemon.settings = {
+                features = {
+                    containerd-snapshotter = true;
+                };
+            };
         };
 
         users.extraGroups.docker.members = [ "ryan" ];
