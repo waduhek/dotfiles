@@ -182,6 +182,7 @@ in {
             go.enable = true;
             python.enable = true;
             protobuf.enable = true;
+            clang.enable = true;
         };
         productivity.libreoffice.enable = true;
         services.ssh.enable = true;

@@ -1,5 +1,6 @@
 {
     imports = [
+        ./clang.nix
         ./go.nix
         ./nodejs.nix
         ./protobuf.nix
