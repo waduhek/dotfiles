@@ -109,6 +109,7 @@ let
                 },
                 { name = "marksman" },
                 { name = "nixd" },
+                { name = "clangd" },
             }
         end
 
