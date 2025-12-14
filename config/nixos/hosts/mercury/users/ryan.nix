@@ -184,6 +184,7 @@ in {
             python.enable = true;
             protobuf.enable = true;
             clang.enable = true;
+            cmake.enable = true;
         };
         productivity.libreoffice.enable = true;
         services.ssh.enable = true;
