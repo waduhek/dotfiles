@@ -56,13 +56,10 @@ in {
             # LSP servers
             # For `rust-analyzer` package, install it via `rustup` by setting
             # `sys.language.rust.enable` to `true`.
-            gopls
-            nodePackages.bash-language-server
+            bash-language-server
             lua-language-server
             yaml-language-server
             marksman
-            pyright
-            nodePackages.typescript-language-server
             nixd
         ];
 
