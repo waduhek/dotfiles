@@ -110,6 +110,7 @@ let
                 { name = "marksman" },
                 { name = "nixd" },
                 { name = "clangd" },
+                { name = "ts_ls" },
             }
         end
 
@@ -185,6 +186,7 @@ in {
             protobuf.enable = true;
             clang.enable = true;
             cmake.enable = true;
+            nodejs.enable = true;
         };
         productivity.libreoffice.enable = true;
         services.ssh.enable = true;
