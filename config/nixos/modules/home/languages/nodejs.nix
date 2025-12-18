@@ -7,6 +7,9 @@ in {
     };
 
     config = lib.mkIf cfg.enable {
-        home.packages = with pkgs; [ nodejs_22 ];
+        home.packages = with pkgs; [
+            nodejs_24
+            typescript-language-server
+        ];
     };
 }
