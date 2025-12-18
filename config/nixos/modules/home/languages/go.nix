@@ -10,6 +10,7 @@ in {
         programs.go.enable = true;
         home.packages = with pkgs; [
             delve
+            gopls
         ];
     };
 }
