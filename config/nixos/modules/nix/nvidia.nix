@@ -3,7 +3,10 @@ let
     cfg = config.sys.gpu.nvidia;
 in {
     options = {
-        sys.gpu.nvidia.enable = lib.mkEnableOption "Enable Nvidia driver";
+        sys.gpu.nvidia = {
+            enable = lib.mkEnableOption "Enable Nvidia driver";
+            enableCuda = lib.mkEnableOption "Enables support for CUDA";
+        };
     };
 
     config = lib.mkIf cfg.enable {
@@ -23,6 +26,6 @@ in {
         };
 
         # Enables CUDA support
-        nixpkgs.config.cudaSupport = true;
+        nixpkgs.config.cudaSupport = cfg.enableCuda;
     };
 }
