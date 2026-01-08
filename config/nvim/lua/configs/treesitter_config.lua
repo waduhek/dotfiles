@@ -1,7 +1,7 @@
 local treesitter = require("nvim-treesitter")
 
 local filetypes = {
-    "go", "gomod", "gosum", "rust", "lua", "nix", "sql", "nginx", "proto",
+    "go", "gomod", "gosum", "gowork", "rust", "lua", "nix", "sql", "nginx", "proto",
     "java", "kotlin", "groovy",
     "html", "css", "javascript", "typescript",
     "git_config", "gitcommit", "git_rebase", "gitignore", "gitattributes", "diff",
@@ -12,6 +12,7 @@ local filetypes = {
     "json", "csv", "tsv",
     "vim", "vimdoc",
     "tmux",
+    "make", "cmake",
 }
 
 treesitter.install(filetypes)

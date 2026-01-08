@@ -67,18 +67,6 @@ return require("lazy").setup({
         dependencies = {
             "nvim-lua/plenary.nvim",
         },
-        -- HACK: This is done to prevent the breaking changes from
-        -- nvim-treesitter from causing errors in the preview. Remove this when
-        -- telescope supports the re-written version of nvim-treesitter.
-        config = function()
-            require("telescope").setup({
-                defaults = {
-                    preview = {
-                        treesitter = false,
-                    },
-                },
-            })
-        end
     },
 
     -- Error viewer
