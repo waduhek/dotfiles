@@ -5,7 +5,7 @@ local filetypes = {
     "java", "kotlin", "groovy",
     "html", "css", "javascript", "typescript",
     "git_config", "gitcommit", "git_rebase", "gitignore", "gitattributes", "diff",
-    "python", "sh", "bash",
+    "python", "bash",
     "dockerfile",
     "markdown", "markdown_inline",
     "xml", "yaml", "toml",
