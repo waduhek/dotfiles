@@ -18,21 +18,31 @@
     # Allow Unfree software.
     nixpkgs.config.allowUnfree = true;
 
-    # Bootloader config.
-    boot.loader = {
-        efi.canTouchEfiVariables = true;
-        systemd-boot.enable = false;
-        grub = {
-            enable = true;
-            efiSupport = true;
-            mirroredBoots = [
-                {
-                    devices = [ "nodev" ];
-                    path = "/boot";
-                    efiBootloaderId = "NixOS";
-                }
-            ];
+    boot = {
+        # Bootloader config.
+        loader = {
+            efi.canTouchEfiVariables = true;
+            systemd-boot.enable = false;
+            grub = {
+                enable = true;
+                efiSupport = true;
+                mirroredBoots = [
+                    {
+                        devices = [ "nodev" ];
+                        path = "/boot";
+                        efiBootloaderId = "NixOS";
+                    }
+                ];
+            };
         };
+
+        kernelPackages = pkgs.linuxPackages_latest;
+
+        # https://wiki.archlinux.org/title/Lm_sensors#MAG_B650_TOMAHAWK_WIFI_(MS-7D75)/MAG_B550_MORTAR_WIFI_(MS-7C94)
+        extraModulePackages = with config.boot.kernelPackages; [ nct6687d ];
+        kernelModules = [
+            "nct6687"
+        ];
     };
 
     # Hostname.
@@ -111,11 +121,5 @@
         git
         librewolf
         xdg-utils
-    ];
-
-    # https://wiki.archlinux.org/title/Lm_sensors#MAG_B650_TOMAHAWK_WIFI_(MS-7D75)/MAG_B550_MORTAR_WIFI_(MS-7C94)
-    boot.extraModulePackages = with config.boot.kernelPackages; [ nct6687d ];
-    boot.kernelModules = [
-        "nct6687"
     ];
 }
