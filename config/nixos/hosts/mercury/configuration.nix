@@ -36,7 +36,9 @@
             };
         };
 
-        kernelPackages = pkgs.linuxPackages_latest;
+        # On 25.11, the latest kernel does not compile with the latest nvidia.
+        # See: https://github.com/NixOS/nixpkgs/issues/489947
+        # kernelPackages = pkgs.linuxPackages_latest;
 
         # https://wiki.archlinux.org/title/Lm_sensors#MAG_B650_TOMAHAWK_WIFI_(MS-7D75)/MAG_B550_MORTAR_WIFI_(MS-7C94)
         extraModulePackages = with config.boot.kernelPackages; [ nct6687d ];
